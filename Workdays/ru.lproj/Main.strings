@@ -1,0 +1,18 @@
+
+/* Class = "IBUINavigationItem"; title = "2013-12-27"; ObjectID = "354-h0-PRy"; */
+"354-h0-PRy.title" = "2013-12-27";
+
+/* Class = "IBUILabel"; text = "Имя"; ObjectID = "EAS-os-Mjr"; */
+"EAS-os-Mjr.text" = "Имя";
+
+/* Class = "IBUITextField"; placeholder = "Имя"; ObjectID = "F5n-q0-Gl7"; */
+"F5n-q0-Gl7.placeholder" = "Имя";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Выходных дней:"; ObjectID = "dVs-hX-PDd"; */
+"dVs-hX-PDd.headerTitle" = "Выходных дней:";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Рабочих дней:"; ObjectID = "kMt-ib-gYK"; */
+"kMt-ib-gYK.headerTitle" = "Рабочих дней:";
+
+/* Class = "IBUILabel"; text = "Выходной/Рабочий"; ObjectID = "qfw-fp-WSP"; */
+"qfw-fp-WSP.text" = "Выходной/Рабочий";

@@ -25,6 +25,18 @@
 
 @implementation RDVCalendarViewController
 
+
+- (id)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        self.month = NSIntegerMax;
+    }
+
+    return self;
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)loadView {
@@ -35,6 +47,9 @@
     [_calendarView setSeparatorStyle:RDVCalendarViewDayCellSeparatorTypeHorizontal];
     [_calendarView setBackgroundColor:[UIColor whiteColor]];
     [_calendarView setDelegate:self];
+    if (self.month != NSIntegerMax) {
+        [_calendarView showMonth:self.month];
+    }
     self.view = _calendarView;
 }
 

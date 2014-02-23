@@ -25,7 +25,7 @@
 
 @class RDVCalendarDayCell;
 
-typedef NS_ENUM(NSInteger, RDVCalendarViewDayCellSeparatorType) {
+typedef NS_OPTIONS(NSInteger, RDVCalendarViewDayCellSeparatorType) {
     RDVCalendarViewDayCellSeparatorTypeNone        = 0,
     RDVCalendarViewDayCellSeparatorTypeHorizontal  = 1 << 0,
     RDVCalendarViewDayCellSeparatorTypeVertical    = 1 << 2,
@@ -50,16 +50,6 @@ typedef NS_ENUM(NSInteger, RDVCalendarViewDayCellSeparatorType) {
  * Returns the label, which contains the name of the currently displayed month. (read-only)
  */
 @property (nonatomic, readonly) UILabel *monthLabel;
-
-/**
- * Returns the back (previous month) button. (read-only)
- */
-@property (nonatomic, readonly) UIButton *backButton;
-
-/**
- * Returns the forward (next month) button. (read-only)
- */
-@property (nonatomic, readonly) UIButton *forwardButton;
 
 /**
  * Returns array containing the week day labels.
@@ -153,7 +143,7 @@ typedef NS_ENUM(NSInteger, RDVCalendarViewDayCellSeparatorType) {
 /**
  * Returns an index identifying the position of day cell at the given point.
  */
-- (NSInteger)indexForDayCellAtPoint:(CGPoint)point;
+- (NSUInteger)indexForDayCellAtPoint:(CGPoint)point;
 
 /**
  * Returns the day cell at the specified index.
@@ -205,6 +195,8 @@ typedef NS_ENUM(NSInteger, RDVCalendarViewDayCellSeparatorType) {
  * Display next month.
  */
 - (void)showNextMonth;
+
+- (void)showMonth:(NSInteger)month;
 
 @end
 

@@ -36,4 +36,6 @@
  */
 @property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
 
+@property (nonatomic, assign) NSInteger month;
+
 @end
