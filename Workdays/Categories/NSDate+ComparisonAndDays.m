@@ -19,10 +19,9 @@
     return [self compare:date] == NSOrderedAscending;
 }
 
-
 - (BOOL)lessOrEqual:(NSDate *)date
 {
-    return [self lessThan:date] || [self equal:date];
+    return [self compare:date] != NSOrderedDescending;
 }
 
 
@@ -31,32 +30,21 @@
     return [self compare:date] == NSOrderedDescending;
 }
 
-
 - (BOOL)greaterOrEqual:(NSDate *)date
 {
-    return [self greaterThan:date] || [self equal:date];
-}
-
-
-- (NSCalendar *)currentCalendar
-{
-    static NSCalendar *currentCalendar = nil;
-    if (!currentCalendar) {
-        currentCalendar = [NSCalendar currentCalendar];
-    }
-    return currentCalendar;
+    return [self compare:date] != NSOrderedAscending;
 }
 
 
 - (NSDate *)dateWithDayOfMonth:(NSInteger)day
 {
-    NSCalendar *calendar = [self currentCalendar];
-    NSDateComponents *components = [calendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear
-                                               fromDate:self];
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [currentCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear
+                                                      fromDate:self];
     if (day > 0) {
         components.day = day;
     }
-    return [calendar dateFromComponents:components];
+    return [currentCalendar dateFromComponents:components];
 }
 
 
@@ -66,13 +54,13 @@
 }
 
 
-- (NSDate *)firstDaysOfMonth
+- (NSDate *)dateAtFirstDayOfMonth
 {
     return [self dateWithDayOfMonth:1];
 }
 
 
-- (NSDate *)lastDayOfMonth
+- (NSDate *)dateAtLastDayOfMonth
 {
     NSRange daysRange = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay
                                                            inUnit:NSCalendarUnitMonth

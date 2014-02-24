@@ -13,7 +13,7 @@
 - (BOOL)greaterOrEqual:(NSDate *)date;
 
 - (NSDate *)dateWithoutTime;
-- (NSDate *)firstDaysOfMonth;
-- (NSDate *)lastDayOfMonth;
+- (NSDate *)dateAtFirstDayOfMonth;
+- (NSDate *)dateAtLastDayOfMonth;
 
 @end

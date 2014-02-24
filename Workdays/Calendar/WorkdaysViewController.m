@@ -40,8 +40,8 @@
     [super viewDidLoad];
 
     NSDate *month = [self.calendarView.month date];
-    _firstDayOfMonth = [month firstDaysOfMonth];
-    _lastDayOfMonth = [month lastDayOfMonth];
+    _firstDayOfMonth = [month dateAtFirstDayOfMonth];
+    _lastDayOfMonth = [month dateAtLastDayOfMonth];
     [self updateCells];
 
     [self.calendarView addGestureRecognizer:[ActionForEditGestureRecognizer gestureWithTarget:self
