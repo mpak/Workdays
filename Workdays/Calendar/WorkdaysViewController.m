@@ -39,8 +39,9 @@
 
     self.workdays = [PersonsStorage workdays];
 
-    [self.calendarView addGestureRecognizer:[ActionForEditGestureRecognizer gestureWithTarget:self
-                                                                                       action:@selector(editPeriod:)]];
+    [ActionForEditGestureRecognizer applyTo:self.calendarView
+                                 withTarget:self
+                                     action:@selector(editPeriod:)];
 }
 
 
@@ -62,7 +63,7 @@ shouldSelectCellAtIndex:(NSInteger)index
 }
 
 
-- (void)editPeriod:(ActionForEditGestureRecognizer *)gesture
+- (void)editPeriod:(UIGestureRecognizer *)gesture
 {
     if (gesture.state == UIGestureRecognizerStateBegan) {
         CGPoint touchPoint = [gesture locationInView:self.calendarView];

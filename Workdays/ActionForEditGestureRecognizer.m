@@ -11,24 +11,18 @@
 
 @implementation ActionForEditGestureRecognizer
 
-- (id)initWithTarget:(id)target
-              action:(SEL)action
++ (void)applyTo:(id)view
+     withTarget:(id)target
+         action:(SEL)action
 {
-    self = [super initWithTarget:target
-                          action:action];
-    if (self) {
-    }
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:target
+                                                                                 action:action];
+    tapGesture.numberOfTapsRequired = 2;
+    [view addGestureRecognizer:tapGesture];
 
-    return self;
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:target
+                                                                                                   action:action];
+    [view addGestureRecognizer:longPressGesture];
 }
-
-
-+ (instancetype)gestureWithTarget:(id)target
-                           action:(SEL)action
-{
-    return [[[self class] alloc] initWithTarget:target
-                                         action:action];
-}
-
 
 @end

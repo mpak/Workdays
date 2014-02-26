@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 Andrey Fedorov. All rights reserved.
 //
 
+@interface ActionForEditGestureRecognizer : NSObject
 
-
-@interface ActionForEditGestureRecognizer : UILongPressGestureRecognizer
-
-+ (instancetype)gestureWithTarget:(id)target
-                           action:(SEL)action;
++ (void)applyTo:(id)view
+     withTarget:(id)target
+         action:(SEL)action;
 
 @end

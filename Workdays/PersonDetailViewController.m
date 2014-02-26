@@ -34,8 +34,9 @@
     _nameLabel = [[UILabel alloc] initWithFrame:_nameField.frame];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.userInteractionEnabled = YES;
-    [_nameLabel addGestureRecognizer:[ActionForEditGestureRecognizer gestureWithTarget:self
-                                                                                action:@selector(editName)]];
+    [ActionForEditGestureRecognizer applyTo:_nameLabel
+                                 withTarget:self
+                                     action:@selector(editName)];
 
     if ([self.person.name length] == 0) {
         // try prevent lag on first keyboard appearance
