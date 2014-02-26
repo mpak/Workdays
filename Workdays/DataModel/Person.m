@@ -18,7 +18,7 @@
     if (!name || [name length] == 0) return;
     if (![_name isEqualToString:name]) {
         _name = name;
-        _modified = YES;
+        _modified = YES; // TODO: move this flag to PersonsStorage?
     }
 }
 
@@ -30,16 +30,6 @@
         _name = @"";
         _workdays = [[NSMutableArray alloc] init];
         _modified = NO;
-    }
-    return self;
-}
-
-
-- (instancetype)initWithName:(NSString *)name
-{
-    self = [self init];
-    if (self) {
-        _name = name;
     }
     return self;
 }
@@ -69,11 +59,29 @@
 
 - (DayType)dayTypeForDate:(NSDate *)date
 {
-    // no dates
-    if (![_workdays count]) return UnknownDay;
-    // first date in future
-    if ([[[_workdays firstObject] startDate] greaterThan:date]) return UnknownDay;
+    Workday *workday = nil;
+    NSDate *today = [[NSDate date] dateWithoutTime];
+    for (Workday *wd in self.workdays) {
+        if ([wd.startDate lessOrEqual:today]) {
+            workday = wd;
+        } else {
+            break;
+        }
+    }
+    if (!workday) {
+        return UnknownDay;
+    }
 
+    NSUInteger todayS = (NSUInteger)[today timeIntervalSince1970];
+    NSUInteger dateS = (NSUInteger)[date timeIntervalSince1970];
+    
+    NSUInteger diff = (todayS - dateS) / (3600 * 24);
+    NSUInteger totalDays = workday.workDaysCount + workday.freeDaysCount;
+    NSUInteger remainder = diff % totalDays;
+
+    if (remainder < workday.workDaysCount) {
+        return WorkDay;
+    }
     return FreeDay;
 }
 

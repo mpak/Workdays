@@ -15,7 +15,6 @@
 @property (nonatomic, strong, readonly) NSMutableArray *workdays;
 @property (nonatomic, readonly) BOOL modified;
 
-- (instancetype)initWithName:(NSString *)name;
 - (DayType)dayTypeForDate:(NSDate *)date;
 - (void)setPeriodStartingAtDate:(NSDate *)date
                            work:(NSUInteger)work
