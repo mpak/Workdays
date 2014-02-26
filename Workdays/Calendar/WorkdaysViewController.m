@@ -74,6 +74,7 @@ shouldSelectCellAtIndex:(NSInteger)index
         }
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
         if (_touchedIndex != NSNotFound) {
+            // FIXME: already selected cell become deselected
             [self.calendarView deselectDayCellAtIndex:_touchedIndex
                                              animated:YES];
             [self performSegueWithIdentifier:@"EditPeriod"
