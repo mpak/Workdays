@@ -21,7 +21,8 @@ typedef void (^PersonSaveCompletionBlock)(NSUInteger index, BOOL isNew);
 + (Person *)personAtIndex:(NSUInteger)index;
 + (void)selectPersonAtIndex:(NSUInteger)index;
 + (void)selectNewPerson;
-+ (void)swap:(NSUInteger)index1 and:(NSUInteger)index2;
++ (void)swap:(NSUInteger)index1
+         and:(NSUInteger)index2;
 + (void)removePersonAtIndex:(NSUInteger)index;
 + (NSUInteger)size;
 

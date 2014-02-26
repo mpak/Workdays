@@ -12,7 +12,7 @@
 
 
 static NSMutableArray *persons = nil;
-static Person *currentPerson   = nil;
+static Person *currentPerson = nil;
 static NSUInteger currentIndex = NSUIntegerMax;
 
 

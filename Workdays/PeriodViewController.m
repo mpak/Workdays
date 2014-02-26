@@ -7,7 +7,6 @@
 //
 
 #import "PeriodViewController.h"
-#import "Workday.h"
 
 
 @interface PeriodViewController ()
@@ -28,14 +27,14 @@
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.navigationItem.title = [dateFormatter stringFromDate:self.workday.startDate];
-    if (self.workday.workDaysCount > 0) {
+    self.navigationItem.title = [dateFormatter stringFromDate:self.date];
+    if (self.workDays > 0) {
         self.workDaysField.text = [NSString stringWithFormat:@"%lu",
-                                                             (unsigned long)self.workday.workDaysCount];
+                                                             (unsigned long)self.workDays];
     }
-    if (self.workday.freeDaysCount > 0) {
+    if (self.freeDays > 0) {
         self.freeDaysField.text = [NSString stringWithFormat:@"%lu",
-                                                             (unsigned long)self.workday.freeDaysCount];
+                                                             (unsigned long)self.freeDays];
     }
 }
 
@@ -77,24 +76,16 @@
                                   sender:(id)sender
 {
     if ([identifier isEqualToString:@"SavePeriod"]) {
-        int workDays = 0, freeDays = 0;
-        if ([self.workDaysField.text length] > 0) {
-            workDays = [self.workDaysField.text intValue];
+        self.workDays = (NSUInteger)[self.workDaysField.text intValue];
+        self.freeDays = (NSUInteger)[self.freeDaysField.text intValue];
+        if (!self.workDays && !self.freeDays) {
+            [[[UIAlertView alloc] initWithTitle:nil
+                                        message:@"Длительность не заполнена"
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+            return NO;
         }
-        if ([self.freeDaysField.text length] > 0) {
-            freeDays = [self.freeDaysField.text intValue];
-        }
-        if (workDays >= 0 && freeDays >= 0 && (workDays > 0 || freeDays > 0)) {
-            self.workday.workDaysCount = (NSUInteger)workDays;
-            self.workday.freeDaysCount = (NSUInteger)freeDays;
-            return YES;
-        }
-        [[[UIAlertView alloc] initWithTitle:nil
-                                    message:@"Длительность не заполнена"
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-        return NO;
     }
     return YES;
 }
@@ -102,6 +93,8 @@
 
 - (IBAction)cancel
 {
+    // FIXME: on cancel already selected cell will be deselected,
+    // FIXME replace with unwind segue?
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }

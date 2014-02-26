@@ -60,9 +60,9 @@
 - (DayType)dayTypeForDate:(NSDate *)date
 {
     Workday *workday = nil;
-    NSDate *today = [[NSDate date] dateWithoutTime];
+    date = [date dateWithoutTime];
     for (Workday *wd in self.workdays) {
-        if ([wd.startDate lessOrEqual:today]) {
+        if ([wd.startDate lessOrEqual:date]) {
             workday = wd;
         } else {
             break;
@@ -72,10 +72,10 @@
         return UnknownDay;
     }
 
-    NSUInteger todayS = (NSUInteger)[today timeIntervalSince1970];
-    NSUInteger dateS = (NSUInteger)[date timeIntervalSince1970];
-    
-    NSUInteger diff = (todayS - dateS) / (3600 * 24);
+    NSUInteger dateBeg = (NSUInteger)[workday.startDate timeIntervalSince1970];
+    NSUInteger dateEnd = (NSUInteger)[date timeIntervalSince1970];
+
+    NSUInteger diff = (dateEnd - dateBeg) / (3600 * 24);
     NSUInteger totalDays = workday.workDaysCount + workday.freeDaysCount;
     NSUInteger remainder = diff % totalDays;
 

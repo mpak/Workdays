@@ -9,7 +9,6 @@
 #import "PersonsViewController.h"
 #import "Person.h"
 #import "NSIndexPath+Unsigned.h"
-#import "NSDate+ComparisonAndDays.h"
 #import "PersonsStorage.h"
 
 
@@ -61,42 +60,13 @@
                                                forIndexPath:indexPath];
         cell.textLabel.text = person.name;
 
-        Workday *min = nil;
-        NSDate *today = [[NSDate date] dateWithoutTime];
-        for (Workday *wd in person.workdays) {
-            if ([wd.startDate lessOrEqual:today]) {
-                min = wd;
-            } else {
-                break;
-            }
-        }
-
         NSString *state = @"";
-        if (min) {
-            NSUInteger work = min.workDaysCount;
-            NSUInteger free = min.freeDaysCount;
-            int n = 0;
-            NSDate *tmp = nil;
-            do {
-                tmp = [NSDate dateWithTimeInterval:3600 * 24 * n++
-                                         sinceDate:min.startDate];
-
-                if (work == 0 && free == 0) {
-                    work = min.workDaysCount;
-                    free = min.freeDaysCount;
-                }
-
-                if (work > 0) {
-                    work--;
-                    state = @"Рабочий";
-                } else if (free > 0) {
-                    free--;
-                    state = @"Выходной";
-                }
-            } while ([tmp lessThan:today]);
+        switch([person dayTypeForDate:[NSDate date]]) {
+            case WorkDay: state = @"Рабочий"; break;
+            case FreeDay: state = @"Выходной"; break;
+            case UnknownDay:break;
         }
         cell.detailTextLabel.text = state;
-
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"AddPersonCell"
                                                forIndexPath:indexPath];

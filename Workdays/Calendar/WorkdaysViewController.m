@@ -7,7 +7,6 @@
 #import "ActionForEditGestureRecognizer.h"
 #import "Workday.h"
 #import "PeriodViewController.h"
-#import "NSDate+ComparisonAndDays.h"
 #import "RDVCalendarDayCell.h"
 #import "PersonsStorage.h"
 #import "Person.h"
@@ -21,9 +20,6 @@
 @implementation WorkdaysViewController
 {
     NSUInteger _touchedIndex;
-    NSDate *_firstDayOfMonth;
-    NSDate *_lastDayOfMonth;
-    DayType _days[31];
 }
 
 
@@ -43,11 +39,6 @@
 
     self.workdays = [PersonsStorage workdays];
 
-    NSDate *month = [self.calendarView.month date];
-    _firstDayOfMonth = [month dateAtFirstDayOfMonth];
-    _lastDayOfMonth = [month dateAtLastDayOfMonth];
-    [self updateCells];
-
     [self.calendarView addGestureRecognizer:[ActionForEditGestureRecognizer gestureWithTarget:self
                                                                                        action:@selector(editPeriod:)]];
 }
@@ -57,7 +48,8 @@
     configureDayCell:(RDVCalendarDayCell *)dayCell
              atIndex:(NSInteger)index
 {
-    if (_days[index] == WorkDay) {
+    NSDate *date = [self.calendarView dateForIndex:index];
+    if ([[PersonsStorage currentPerson] dayTypeForDate:date] == WorkDay) {
         dayCell.highlighted = YES;
     }
 }
@@ -101,13 +93,15 @@ shouldSelectCellAtIndex:(NSInteger)index
                 break;
             }
         }
-        if (!workday) {
-            workday = [[Workday alloc] init];
-            workday.startDate = date;
-        }
         UINavigationController *navigationController = segue.destinationViewController;
         PeriodViewController *periodViewController = navigationController.viewControllers[0];
-        periodViewController.workday = workday;
+        if (workday) {
+            periodViewController.date = workday.startDate;
+            periodViewController.workDays = workday.workDaysCount;
+            periodViewController.freeDays = workday.freeDaysCount;
+        } else {
+            periodViewController.date = date;
+        }
     }
 }
 
@@ -115,91 +109,9 @@ shouldSelectCellAtIndex:(NSInteger)index
 - (IBAction)savePeriod:(UIStoryboardSegue *)segue
 {
     PeriodViewController *periodViewController = segue.sourceViewController;
-    Workday *workday = periodViewController.workday;
-    [[PersonsStorage currentPerson] setPeriodStartingAtDate:workday.startDate
-                                                       work:workday.workDaysCount
-                                                       free:workday.freeDaysCount];
-    [self updateCells];
-}
-
-
-- (void)fillCells
-{
-    for (int i = 0; i < 31; i++) {
-        _days[i] = UnknownDay;
-    }
-    if ([self.workdays count] == 0) return;
-
-    Workday *min = nil;
-    NSMutableArray *marks = [[NSMutableArray alloc] init];
-    for (Workday *wd in self.workdays) {
-        if ([wd.startDate lessOrEqual:_firstDayOfMonth]) {
-            min = wd;
-        } else if ([wd.startDate greaterThan:_firstDayOfMonth] && [wd.startDate lessOrEqual:_lastDayOfMonth]) {
-            [marks addObject:wd];
-        }
-    }
-    if (min) {
-        [marks insertObject:min
-                    atIndex:0];
-    }
-
-    int dayIndex = 0;
-    if ([marks count] > 0) {
-        NSDate *date = [[marks firstObject] startDate];
-        if ([date greaterThan:_firstDayOfMonth]) {
-            int n = 0;
-            NSDate *tmp = nil;
-            do {
-                tmp = [NSDate dateWithTimeInterval:3600 * 24 * n++
-                                         sinceDate:_firstDayOfMonth];
-            } while ([tmp lessThan:date]);
-            dayIndex = n - 1;
-        }
-    }
-
-    while ([marks count] > 0) {
-        min = [marks firstObject];
-        [marks removeObjectAtIndex:0];
-        NSDate *minDate = min.startDate;
-        NSDate *maxDate = [[marks firstObject] startDate];
-
-        NSUInteger work = min.workDaysCount;
-        NSUInteger free = min.freeDaysCount;
-        int n = 0;
-        NSDate *tmp = nil;
-        do {
-            tmp = [NSDate dateWithTimeInterval:3600 * 24 * n++
-                                     sinceDate:minDate];
-            if (maxDate && [tmp equal:maxDate]) {
-                break;
-            }
-
-            if (work == 0 && free == 0) {
-                work = min.workDaysCount;
-                free = min.freeDaysCount;
-            }
-
-            DayType dayType = UnknownDay;
-            if (work > 0) {
-                work--;
-                dayType = WorkDay;
-            } else if (free > 0) {
-                free--;
-                dayType = FreeDay;
-            }
-            if ([tmp greaterOrEqual:_firstDayOfMonth]) {
-                _days[dayIndex] = dayType;
-                dayIndex++;
-            }
-        } while ([tmp lessThan:_lastDayOfMonth]);
-    }
-}
-
-
-- (void)updateCells
-{
-    [self fillCells];
+    [[PersonsStorage currentPerson] setPeriodStartingAtDate:periodViewController.date
+                                                       work:periodViewController.workDays
+                                                       free:periodViewController.freeDays];
     [[self calendarView] reloadData];
 }
 

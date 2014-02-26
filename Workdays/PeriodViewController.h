@@ -8,11 +8,10 @@
 
 
 
-@class Workday;
-
-
 @interface PeriodViewController : UITableViewController
 
-@property (nonatomic, strong) Workday *workday;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, assign) NSUInteger workDays;
+@property (nonatomic, assign) NSUInteger freeDays;
 
 @end
