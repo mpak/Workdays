@@ -23,8 +23,6 @@ static NSString *const CalendarStoryboardIdentifier = @"WorkdaysCalendar";
                                                          bundle:nil];
     WorkdaysViewController *controller
         = [storyboard instantiateViewControllerWithIdentifier:CalendarStoryboardIdentifier];
-    controller.delegate = self.passDelegate;
-    controller.workdays = self.passWorkdays;
     return controller;
 }
 
@@ -37,8 +35,6 @@ static NSString *const CalendarStoryboardIdentifier = @"WorkdaysCalendar";
 
     WorkdaysViewController *old = (WorkdaysViewController *)viewController;
     controller.month = [[[old calendarView] month] month] - 1;
-    controller.delegate = self.passDelegate;
-    controller.workdays = self.passWorkdays;
     return controller;
 }
 
@@ -51,8 +47,6 @@ static NSString *const CalendarStoryboardIdentifier = @"WorkdaysCalendar";
 
     WorkdaysViewController *old = (WorkdaysViewController *)viewController;
     controller.month = [[[old calendarView] month] month] + 1;
-    controller.delegate = self.passDelegate;
-    controller.workdays = self.passWorkdays;
     return controller;
 }
 

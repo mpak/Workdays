@@ -5,22 +5,5 @@
 
 #import "RDVCalendarViewController.h"
 
-
-@class WorkdaysViewController;
-@class Workday;
-
-
-@protocol WorkdaysViewControllerDelegate
-- (void)workdaysViewController:(WorkdaysViewController *)controller
-          finishEditingWorkday:(Workday *)workday;
-@end
-
-
 @interface WorkdaysViewController : RDVCalendarViewController
-
-@property (nonatomic, weak) NSArray *workdays;
-@property (nonatomic, weak) id <WorkdaysViewControllerDelegate> delegate;
-
-- (void)updateCells;
-
 @end

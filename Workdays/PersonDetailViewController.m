@@ -9,11 +9,12 @@
 #import "PersonDetailViewController.h"
 #import "Person.h"
 #import "ActionForEditGestureRecognizer.h"
-#import "CalendarPageViewController.h"
+#import "PersonsStorage.h"
 
 
-@interface PersonDetailViewController () <UITextFieldDelegate, WorkdaysViewControllerDelegate>
+@interface PersonDetailViewController () <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UIView *calendarContainer;
+@property (nonatomic, weak) Person *person;
 @end
 
 
@@ -23,19 +24,12 @@
     IBOutlet UITextField *_nameField;
 }
 
-- (id)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        _person = [[Person alloc] initWithName:@""];
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.person = [PersonsStorage currentPerson];
 
     _nameLabel = [[UILabel alloc] initWithFrame:_nameField.frame];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -111,28 +105,5 @@
     [self updateNameLabel];
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue
-                 sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"EmbedCalendar"]) {
-        CalendarPageViewController *pageController = segue.destinationViewController;
-        pageController.passDelegate = self;
-        pageController.passWorkdays = self.person.workdays;
-    }
-}
-
-
-- (void)workdaysViewController:(WorkdaysViewController *)controller
-          finishEditingWorkday:(Workday *)workday
-{
-    [self.person setPeriodStartingAtDate:workday.startDate
-                                    work:workday.workDaysCount
-                                    free:workday.freeDaysCount];
-    if (self.person.modified) {
-        controller.workdays = self.person.workdays;
-        [controller updateCells];
-    }
-}
 
 @end

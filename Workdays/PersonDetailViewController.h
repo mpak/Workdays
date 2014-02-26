@@ -7,12 +7,5 @@
 //
 
 
-#import "WorkdaysViewController.h"
-
-
-@class Person;
-
-
 @interface PersonDetailViewController : UIViewController
-@property (nonatomic, strong) Person *person;
 @end

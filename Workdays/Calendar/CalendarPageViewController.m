@@ -20,8 +20,6 @@
     [super viewDidLoad];
 
     _pages = [[CalendarPages alloc] init];
-    _pages.passDelegate = self.passDelegate;
-    _pages.passWorkdays = self.passWorkdays;
     self.dataSource = _pages;
     self.delegate = _pages;
 

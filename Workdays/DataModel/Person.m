@@ -23,13 +23,23 @@
 }
 
 
-- (instancetype)initWithName:(NSString *)name
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        _name = name;
+        _name = @"";
         _workdays = [[NSMutableArray alloc] init];
         _modified = NO;
+    }
+    return self;
+}
+
+
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [self init];
+    if (self) {
+        _name = name;
     }
     return self;
 }

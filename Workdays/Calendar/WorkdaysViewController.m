@@ -9,9 +9,12 @@
 #import "PeriodViewController.h"
 #import "NSDate+ComparisonAndDays.h"
 #import "RDVCalendarDayCell.h"
+#import "PersonsStorage.h"
+#import "Person.h"
 
 
 @interface WorkdaysViewController () <RDVCalendarViewDelegate>
+@property (nonatomic, weak) NSArray *workdays;
 @end
 
 
@@ -28,7 +31,6 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        _workdays = nil;
         _touchedIndex = NSNotFound;
     }
     return self;
@@ -38,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.workdays = [PersonsStorage workdays];
 
     NSDate *month = [self.calendarView.month date];
     _firstDayOfMonth = [month dateAtFirstDayOfMonth];
@@ -111,8 +115,11 @@ shouldSelectCellAtIndex:(NSInteger)index
 - (IBAction)savePeriod:(UIStoryboardSegue *)segue
 {
     PeriodViewController *periodViewController = segue.sourceViewController;
-    [self.delegate workdaysViewController:self
-                     finishEditingWorkday:periodViewController.workday];
+    Workday *workday = periodViewController.workday;
+    [[PersonsStorage currentPerson] setPeriodStartingAtDate:workday.startDate
+                                                       work:workday.workDaysCount
+                                                       free:workday.freeDaysCount];
+    [self updateCells];
 }
 
 
@@ -147,7 +154,7 @@ shouldSelectCellAtIndex:(NSInteger)index
                 tmp = [NSDate dateWithTimeInterval:3600 * 24 * n++
                                          sinceDate:_firstDayOfMonth];
             } while ([tmp lessThan:date]);
-            dayIndex = n;
+            dayIndex = n - 1;
         }
     }
 

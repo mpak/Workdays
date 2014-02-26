@@ -8,8 +8,4 @@
 
 
 @interface CalendarPageViewController : UIPageViewController
-
-@property (nonatomic, weak) NSArray *passWorkdays;
-@property (nonatomic, weak) id passDelegate;
-
 @end

@@ -9,18 +9,19 @@
 /* Begin PBXBuildFile section */
 		1A7280A9C35148958661E0A0 /* NSIndexPath+Unsigned.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728110734EF9DBBA7C116F /* NSIndexPath+Unsigned.m */; };
 		1A72818E49F5ADBD4419CDC6 /* CalendarPages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7287A440FC1DC30D0BD096 /* CalendarPages.m */; };
+		1A7282CF8E918DB7F97C2BDA /* Workday.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728658ABFC914948024FB5 /* Workday.m */; };
 		1A728355DDA2BE0F221977FF /* UIApplication+HideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72825F53A6E193508DFBD3 /* UIApplication+HideKeyboard.m */; };
+		1A7283E64E430DC123CC6DAB /* PersonsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */; };
 		1A7284906DE6FEAF462713BD /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */; };
 		1A72855FC05E9091D7B7FD28 /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728C1CBB164983570DE738 /* PersonsViewController.m */; };
 		1A728830A0707AED96291F5A /* PeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7281069670DD5E51B63A81 /* PeriodViewController.m */; };
+		1A7288A30722CDA191442C67 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728B56D47AE6D5FF005338 /* Person.m */; };
 		1A728A1AD72EEFA639080E35 /* WorkdaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7285D557FB8965190823C9 /* WorkdaysViewController.m */; };
-		1A728AB239D468F4E849FE05 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7287BCAB54780B0A131182 /* Person.m */; };
 		1A728B224E51A57ED2227398 /* ActionForEditGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */; };
 		1A728B836AA67FF11EE20B7F /* RDVCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728829F3D466DE49061F25 /* RDVCalendarViewController.m */; };
 		1A728D0BFA7F5A8D7F9C3B96 /* RDVCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728099677F7FB9938F1C75 /* RDVCalendarDayCell.m */; };
 		1A728DC55E2498A3CE497561 /* CalendarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7282375EF7B1CD43D1FF4A /* CalendarPageViewController.m */; };
 		1A728E3CF1BD18D40548C0DD /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
-		1A728E4B5039E2E530938276 /* Workday.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728438DD71E24A69DCC496 /* Workday.m */; };
 		1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
 		C5D0703118A53EC800BD5152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703018A53EC800BD5152 /* Foundation.framework */; };
 		C5D0703318A53EC800BD5152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703218A53EC800BD5152 /* CoreGraphics.framework */; };
@@ -58,19 +59,21 @@
 		1A728274C0B283A0680BD573 /* CalendarPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPages.h; sourceTree = "<group>"; };
 		1A728283C76053F71ABAC4FA /* RDVCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVCalendarDayCell.h; sourceTree = "<group>"; };
 		1A7283FD1059B72B74675E64 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
-		1A728438DD71E24A69DCC496 /* Workday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workday.m; sourceTree = "<group>"; };
-		1A728465A0CBD8F52BCBBF37 /* Workday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workday.h; sourceTree = "<group>"; };
 		1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionForEditGestureRecognizer.m; sourceTree = "<group>"; };
 		1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVCalendarView.m; sourceTree = "<group>"; };
 		1A7285D557FB8965190823C9 /* WorkdaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkdaysViewController.m; sourceTree = "<group>"; };
+		1A728658ABFC914948024FB5 /* Workday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workday.m; sourceTree = "<group>"; };
 		1A72865B30A377C86B9C5904 /* WorkdaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkdaysViewController.h; sourceTree = "<group>"; };
+		1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsStorage.m; sourceTree = "<group>"; };
 		1A7287A440FC1DC30D0BD096 /* CalendarPages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPages.m; sourceTree = "<group>"; };
-		1A7287BCAB54780B0A131182 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1A7287A71C81F3388825246C /* Workday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workday.h; sourceTree = "<group>"; };
+		1A7288289487525782250C96 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		1A728829F3D466DE49061F25 /* RDVCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVCalendarViewController.m; sourceTree = "<group>"; };
 		1A72883B41A5169E6F65F285 /* RDVCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVCalendarView.h; sourceTree = "<group>"; };
 		1A7289009BC686D49BA6077F /* UIApplication+HideKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+HideKeyboard.h"; sourceTree = "<group>"; };
+		1A728A93664BAAD850D58C60 /* PersonsStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsStorage.h; sourceTree = "<group>"; };
 		1A728B0FA77B7558E5699711 /* CalendarPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPageViewController.h; sourceTree = "<group>"; };
-		1A728BD8479B419DFC15C5D0 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1A728B56D47AE6D5FF005338 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1A728C1CBB164983570DE738 /* PersonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonsViewController.m; sourceTree = "<group>"; };
 		1A728CE784ABEC979AC28B3A /* RDVCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVCalendarViewController.h; sourceTree = "<group>"; };
 		1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
@@ -150,6 +153,19 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		1A72854B2F7F3E8297D42A0C /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */,
+				1A728B56D47AE6D5FF005338 /* Person.m */,
+				1A728A93664BAAD850D58C60 /* PersonsStorage.h */,
+				1A7288289487525782250C96 /* Person.h */,
+				1A7287A71C81F3388825246C /* Workday.h */,
+				1A728658ABFC914948024FB5 /* Workday.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		1A728C1DAEB1428C2B842950 /* RDVCalendarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +220,6 @@
 				1A728C1DAEB1428C2B842950 /* RDVCalendarView */,
 				1A7283FD1059B72B74675E64 /* PersonDetailViewController.h */,
 				1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */,
-				1A728BD8479B419DFC15C5D0 /* Person.h */,
-				1A7287BCAB54780B0A131182 /* Person.m */,
-				1A728465A0CBD8F52BCBBF37 /* Workday.h */,
-				1A728438DD71E24A69DCC496 /* Workday.m */,
 				1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */,
 				1A728C1CBB164983570DE738 /* PersonsViewController.m */,
 				1A728F4099457F4816FC10F2 /* PeriodViewController.h */,
@@ -216,6 +228,7 @@
 				1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */,
 				1A728492F563397DB8FFCE6F /* Calendar */,
 				1A72830EC9C35D474FC5844F /* Categories */,
+				1A72854B2F7F3E8297D42A0C /* DataModel */,
 			);
 			path = Workdays;
 			sourceTree = "<group>";
@@ -356,8 +369,6 @@
 				1A728D0BFA7F5A8D7F9C3B96 /* RDVCalendarDayCell.m in Sources */,
 				1A728B836AA67FF11EE20B7F /* RDVCalendarViewController.m in Sources */,
 				1A7284906DE6FEAF462713BD /* PersonDetailViewController.m in Sources */,
-				1A728AB239D468F4E849FE05 /* Person.m in Sources */,
-				1A728E4B5039E2E530938276 /* Workday.m in Sources */,
 				1A72855FC05E9091D7B7FD28 /* PersonsViewController.m in Sources */,
 				1A728830A0707AED96291F5A /* PeriodViewController.m in Sources */,
 				1A728B224E51A57ED2227398 /* ActionForEditGestureRecognizer.m in Sources */,
@@ -367,6 +378,9 @@
 				1A728355DDA2BE0F221977FF /* UIApplication+HideKeyboard.m in Sources */,
 				1A7280A9C35148958661E0A0 /* NSIndexPath+Unsigned.m in Sources */,
 				1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */,
+				1A7283E64E430DC123CC6DAB /* PersonsStorage.m in Sources */,
+				1A7288A30722CDA191442C67 /* Person.m in Sources */,
+				1A7282CF8E918DB7F97C2BDA /* Workday.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
