@@ -11,11 +11,9 @@
 #import "NSDate+ComparisonAndDays.h"
 
 
-@interface PersonsStorage ()
-@property (nonatomic, strong, readwrite) Person *currentPerson;
-@property (nonatomic, assign) NSUInteger currentIndex;
-@property (nonatomic, strong, readonly) NSMutableArray *persons;
-@end
+static NSMutableArray *persons = nil;
+static Person *currentPerson   = nil;
+static NSUInteger currentIndex = NSUIntegerMax;
 
 
 @implementation PersonsStorage
@@ -28,59 +26,33 @@
 }
 
 
-- (instancetype)init
++ (void)initialize
 {
-    self = [super init];
-    if (self) {
-        NSString *filePath = [self.class dataFilePath];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-            _persons = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-        }
-        if (!_persons) {
-            _persons = [[NSMutableArray alloc] init];
-        }
-        _currentPerson = nil;
-        _currentIndex = NSUIntegerMax;
+    NSString *filePath = [self.class dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        persons = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     }
-    return self;
-}
-
-
-+ (instancetype)instance
-{
-    static PersonsStorage *instance = nil;
-    static dispatch_once_t once;
-    dispatch_once(&once, ^{
-        instance = [[PersonsStorage alloc] init];
-    });
-    return instance;
-}
-
-
-+ (NSMutableArray *)persons
-{
-    return [[self instance] persons];
+    if (!persons) {
+        persons = [[NSMutableArray alloc] init];
+    }
 }
 
 
 + (Person *)personAtIndex:(NSUInteger)index
 {
-    return [[[self instance] persons] objectAtIndex:index];
-    return nil;
+    return persons[index];
 }
 
 
 + (void)selectPersonAtIndex:(NSUInteger)index
 {
-    Person *person;
     if (index == NSUIntegerMax) {
-        person = [[Person alloc] init];
-        index = [self size];
+        currentIndex = [self size];
+        currentPerson = [[Person alloc] init];
     } else {
-        person = [[self persons] objectAtIndex:index];
+        currentIndex = index;
+        currentPerson = persons[index];
     }
-    [[self instance] setCurrentIndex:index];
-    [[self instance] setCurrentPerson:person];
 }
 
 
@@ -93,49 +65,48 @@
 + (void)swap:(NSUInteger)index1
          and:(NSUInteger)index2
 {
-    Person *person = [self persons][index1];
-    [self persons][index1] = [self persons][index2];
-    [self persons][index2] = person;
+    Person *person = persons[index1];
+    persons[index1] = persons[index2];
+    persons[index2] = person;
     [self save];
 }
 
 
 + (void)removePersonAtIndex:(NSUInteger)index
 {
-    [[self persons] removeObjectAtIndex:index];
+    [persons removeObjectAtIndex:index];
     [self save];
 }
 
 
 + (NSUInteger)size
 {
-    return [[self persons] count];
+    return [persons count];
 }
 
 
 + (Person *)currentPerson
 {
-    return [[self instance] currentPerson];
+    return currentPerson;
 }
 
 
 + (NSArray *)workdays
 {
-    return [[self currentPerson] workdays];
+    return [currentPerson workdays];
 }
 
 
 + (void)saveCurrentPerson:(PersonSaveCompletionBlock)onSave
 {
-    Person *person = [[self instance] currentPerson];
-    if (person.modified) {
+    if (currentPerson.modified) {
         BOOL isNew = NO;
         NSUInteger index = [self size];
-        if ([[self instance] currentIndex] == index) {
+        if (currentIndex == index) {
             isNew = YES;
-            [[self persons] addObject:person];
+            [persons addObject:currentPerson];
         } else {
-            index = [[self instance] currentIndex];
+            index = currentIndex;
         }
         [self save];
         onSave(index, isNew);
@@ -145,7 +116,7 @@
 
 + (void)save
 {
-    [NSKeyedArchiver archiveRootObject:self.persons
+    [NSKeyedArchiver archiveRootObject:persons
                                 toFile:[self dataFilePath]];
 }
 
