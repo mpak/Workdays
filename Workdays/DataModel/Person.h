@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) BOOL modified;
 
 - (DayType)dayTypeForDate:(NSDate *)date;
+- (DayType)dayTypeForDate:(NSDate *)date
+                    index:(NSUInteger *)index;
 - (void)setPeriodStartingAtDate:(NSDate *)date
                            work:(NSUInteger)work
                            free:(NSUInteger)free;

@@ -58,7 +58,9 @@
 
 
 - (DayType)dayTypeForDate:(NSDate *)date
+                    index:(NSUInteger *)index
 {
+    if (index) *index = 0;
     Workday *workday = nil;
     date = [date dateWithoutTime];
     for (Workday *wd in self.workdays) {
@@ -80,9 +82,17 @@
     NSUInteger remainder = diff % totalDays;
 
     if (remainder < workday.workDaysCount) {
+        if (index) *index = remainder + 1;
         return WorkDay;
     }
+    if (index) *index = remainder - workday.workDaysCount + 1;
     return FreeDay;
+}
+
+
+- (DayType)dayTypeForDate:(NSDate *)date
+{
+    return [self dayTypeForDate:date index:NULL];
 }
 
 

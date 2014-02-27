@@ -61,10 +61,14 @@
         cell.textLabel.text = person.name;
 
         NSString *state = @"";
-        switch([person dayTypeForDate:[NSDate date]]) {
+        NSUInteger index = 0;
+        switch([person dayTypeForDate:[NSDate date] index:&index]) {
             case WorkDay: state = @"Рабочий"; break;
             case FreeDay: state = @"Выходной"; break;
             case UnknownDay:break;
+        }
+        if (index) {
+            state = [state stringByAppendingFormat:@" %u", index];
         }
         cell.detailTextLabel.text = state;
     } else {
