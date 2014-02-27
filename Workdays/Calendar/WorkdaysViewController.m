@@ -18,19 +18,6 @@
 
 
 @implementation WorkdaysViewController
-{
-    NSUInteger _touchedIndex;
-}
-
-
-- (id)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        _touchedIndex = NSNotFound;
-    }
-    return self;
-}
 
 
 - (void)viewDidLoad
@@ -65,21 +52,11 @@ shouldSelectCellAtIndex:(NSInteger)index
 
 - (void)editPeriod:(UIGestureRecognizer *)gesture
 {
-    if (gesture.state == UIGestureRecognizerStateBegan) {
+    if (gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateEnded) {
         CGPoint touchPoint = [gesture locationInView:self.calendarView];
-        _touchedIndex = [self.calendarView indexForDayCellAtPoint:touchPoint];
-        if (_touchedIndex != NSNotFound) {
-            [self.calendarView selectDayCellAtIndex:_touchedIndex
-                                           animated:YES];
-        }
-    } else if (gesture.state == UIGestureRecognizerStateEnded) {
-        if (_touchedIndex != NSNotFound) {
-            // FIXME: already selected cell become deselected
-            [self.calendarView deselectDayCellAtIndex:_touchedIndex
-                                             animated:YES];
-            [self performSegueWithIdentifier:@"EditPeriod"
-                                      sender:[self.calendarView dateForIndex:_touchedIndex]];
-        }
+        NSUInteger touchedIndex = [self.calendarView indexForDayCellAtPoint:touchPoint];
+        [self performSegueWithIdentifier:@"EditPeriod"
+                                  sender:[self.calendarView dateForIndex:touchedIndex]];
     }
 }
 
