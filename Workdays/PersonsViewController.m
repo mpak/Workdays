@@ -25,13 +25,45 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"AddPersonCell"];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillEnterForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self refreshPersonsList];
+}
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+- (void)applicationWillEnterForeground
+{
+    [self refreshPersonsList];
 }
 
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+
+- (void)refreshPersonsList
+{
+    if ([PersonsStorage shouldRefreshPersonsList]) {
+        [self.tableView reloadData];
+    }
 }
 
 
@@ -122,15 +154,6 @@ canMoveRowAtIndexPath:(NSIndexPath *)indexPath
         return UITableViewCellEditingStyleDelete;
     }
     return UITableViewCellEditingStyleNone;
-}
-
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    if ([PersonsStorage shouldRefreshPersonsList]) {
-        [self.tableView reloadData];
-    }
 }
 
 
