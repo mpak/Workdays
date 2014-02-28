@@ -61,7 +61,7 @@
 
 - (void)refreshPersonsList
 {
-    if ([PersonsStorage shouldRefreshPersonsList]) {
+    if ([PersonsStorage shouldRefreshDisplayedData]) {
         [self.tableView reloadData];
     }
 }

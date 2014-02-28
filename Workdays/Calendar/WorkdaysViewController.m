@@ -29,6 +29,25 @@
     [ActionForEditGestureRecognizer applyTo:self.calendarView
                                  withTarget:self
                                      action:@selector(editPeriod:)];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillEnterForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+}
+
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+- (void)applicationWillEnterForeground
+{
+    if ([PersonsStorage shouldRefreshDisplayedData]) {
+        [[self calendarView] reloadData];
+    }
 }
 
 

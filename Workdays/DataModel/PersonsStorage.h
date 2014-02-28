@@ -26,6 +26,6 @@ typedef void (^PersonSaveCompletionBlock)(NSUInteger index, BOOL isNew);
 + (void)removePersonAtIndex:(NSUInteger)index;
 + (NSUInteger)size;
 
-+ (BOOL)shouldRefreshPersonsList;
++ (BOOL)shouldRefreshDisplayedData;
 
 @end

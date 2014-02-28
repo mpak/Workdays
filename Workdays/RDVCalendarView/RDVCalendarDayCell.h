@@ -80,6 +80,8 @@ typedef NS_ENUM(NSInteger, RDVCalendarDayCellSelectionStyle) {
  */
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 
+- (void)setBold:(BOOL)bold;
+
 /**
  * Sets the highlighted state of the cell, optionally animating the transition between states.
  */

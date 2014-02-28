@@ -121,7 +121,7 @@ static NSUInteger currentIndex = NSUIntegerMax;
 }
 
 
-+ (BOOL)shouldRefreshPersonsList
++ (BOOL)shouldRefreshDisplayedData
 {
     static NSDate *lastUpdateDay = nil;
     if (!lastUpdateDay) {

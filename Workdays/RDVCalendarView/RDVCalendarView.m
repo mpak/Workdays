@@ -464,8 +464,12 @@
             [[dayCell backgroundView] setBackgroundColor:[self normalDayColor]];
             [[dayCell textLabel] setTextColor:[self currentDayColor]];
             [[dayCell textLabel] setHighlightedTextColor:[self currentDayColor]];
+            [dayCell setBold:YES];
         } else {
             [[dayCell backgroundView] setBackgroundColor:[self normalDayColor]];
+            [[dayCell textLabel] setTextColor:[UIColor blackColor]];
+            [[dayCell textLabel] setHighlightedTextColor:[UIColor whiteColor]];
+            [dayCell setBold:NO];
         }
         
         [[dayCell selectedBackgroundView] setBackgroundColor:[self selectedDayColor]];

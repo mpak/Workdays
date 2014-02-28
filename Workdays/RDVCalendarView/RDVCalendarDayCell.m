@@ -122,6 +122,15 @@
     [self setSelected:selected animated:NO];
 }
 
+- (void)setBold:(BOOL)bold
+{
+    enum UIFontDescriptorSymbolicTraits traits = bold ? UIFontDescriptorTraitBold : kNoOptions;
+    UIFontDescriptor *descriptor
+        = [[[self.textLabel font] fontDescriptor] fontDescriptorWithSymbolicTraits:traits];
+    UIFont *newFont = [UIFont fontWithDescriptor:descriptor size:0];
+    [self.textLabel setFont:newFont];
+}
+
 - (BOOL)isHighlighted {
     return _highlighted;
 }
