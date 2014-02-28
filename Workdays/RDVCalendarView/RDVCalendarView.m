@@ -461,7 +461,9 @@
         if (index + 1 == [self currentDay].day &&
             [self month].month == [self currentDay].month &&
             [self month].year == [self currentDay].year) {
-            [[dayCell backgroundView] setBackgroundColor:[self currentDayColor]];
+            [[dayCell backgroundView] setBackgroundColor:[self normalDayColor]];
+            [[dayCell textLabel] setTextColor:[self currentDayColor]];
+            [[dayCell textLabel] setHighlightedTextColor:[self currentDayColor]];
         } else {
             [[dayCell backgroundView] setBackgroundColor:[self normalDayColor]];
         }
