@@ -7,14 +7,12 @@
 //
 
 #import "PersonDetailViewController.h"
-#import "Person.h"
 #import "ActionForEditGestureRecognizer.h"
 #import "PersonsStorage.h"
 
 
 @interface PersonDetailViewController () <UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UIView *calendarContainer;
-@property (nonatomic, weak) Person *person;
 @end
 
 
@@ -29,8 +27,6 @@
 {
     [super viewDidLoad];
 
-    self.person = [PersonsStorage currentPerson];
-
     _nameLabel = [[UILabel alloc] initWithFrame:_nameField.frame];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.userInteractionEnabled = YES;
@@ -38,7 +34,7 @@
                                  withTarget:self
                                      action:@selector(editName)];
 
-    if ([self.person.name length] == 0) {
+    if ([[PersonsStorage personName] length] == 0) {
         // try prevent lag on first keyboard appearance
         [_nameField performSelectorOnMainThread:@selector(becomeFirstResponder)
                                      withObject:nil
@@ -54,7 +50,7 @@
     // back button clicked
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
         if ([self.navigationItem.titleView isFirstResponder]) {
-            self.person.name = _nameField.text;
+            [PersonsStorage setPersonName:_nameField.text];
         }
         [self performSegueWithIdentifier:@"SavePerson"
                                   sender:nil];
@@ -65,7 +61,7 @@
 
 - (void)updateNameLabel
 {
-    _nameLabel.text = self.person.name;
+    _nameLabel.text = [PersonsStorage personName];
     UIFontDescriptorSymbolicTraits symTraits;
     if ([_nameLabel.text length] > 0) {
         _nameLabel.textColor = [UIColor blackColor];
@@ -84,7 +80,7 @@
 
 - (IBAction)editName
 {
-    _nameField.text = self.person.name;
+    _nameField.text = [PersonsStorage personName];
     self.navigationItem.titleView = _nameField;
     [_nameField becomeFirstResponder];
 }
@@ -102,7 +98,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     NSString *text = [_nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    self.person.name = text;
+    [PersonsStorage setPersonName:text];
     [self updateNameLabel];
 }
 

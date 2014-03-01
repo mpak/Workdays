@@ -123,4 +123,10 @@
 }
 
 
+- (void)removePeriodAtIndex:(NSUInteger)index
+{
+    [self.workdays removeObjectAtIndex:index];
+    _modified = YES;
+}
+
 @end

@@ -21,5 +21,6 @@
 - (void)setPeriodStartingAtDate:(NSDate *)date
                            work:(NSUInteger)work
                            free:(NSUInteger)free;
+- (void)removePeriodAtIndex:(NSUInteger)index;
 
 @end

@@ -13,7 +13,9 @@
 
 static NSMutableArray *persons = nil;
 static Person *currentPerson = nil;
-static NSUInteger currentIndex = NSUIntegerMax;
+static NSUInteger currentPersonIndex = NSNotFound;
+static Workday *currentWorkday = nil;
+static NSUInteger currentWorkdayIndex = NSNotFound;
 
 
 @implementation PersonsStorage
@@ -38,36 +40,54 @@ static NSUInteger currentIndex = NSUIntegerMax;
 }
 
 
-+ (Person *)personAtIndex:(NSUInteger)index
+#pragma mark - Exact person methods
+
++ (NSString *)personName
 {
-    return persons[index];
+    return [currentPerson name];
 }
 
 
-+ (void)selectPersonAtIndex:(NSUInteger)index
++ (void)setPersonName:(NSString *)name
 {
-    if (index == NSUIntegerMax) {
-        currentIndex = [self size];
-        currentPerson = [[Person alloc] init];
-    } else {
-        currentIndex = index;
-        currentPerson = persons[index];
+    currentPerson.name = name;
+}
+
+
++ (NSString *)personDetails
+{
+    NSString *state = @"";
+    NSUInteger index = 0;
+    switch([currentPerson dayTypeForDate:[NSDate date] index:&index]) {
+        case WorkDay: state = @"Рабочий"; break;
+        case FreeDay: state = @"Выходной"; break;
+        case UnknownDay:break;
     }
+    if (index) {
+        state = [state stringByAppendingFormat:@" %u", index];
+    }
+    return state;
 }
 
 
 + (void)selectNewPerson
 {
-    [self selectPersonAtIndex:NSUIntegerMax];
+    currentPersonIndex = NSNotFound;
+    currentPerson = [[Person alloc] init];
+}
+
+
++ (void)selectPersonAtIndex:(NSUInteger)index
+{
+    currentPersonIndex = index;
+    currentPerson = persons[index];
 }
 
 
 + (void)swap:(NSUInteger)index1
          and:(NSUInteger)index2
 {
-    Person *person = persons[index1];
-    persons[index1] = persons[index2];
-    persons[index2] = person;
+    [persons exchangeObjectAtIndex:index1 withObjectAtIndex:index2];
     [self save];
 }
 
@@ -79,38 +99,78 @@ static NSUInteger currentIndex = NSUIntegerMax;
 }
 
 
-+ (NSUInteger)size
-{
-    return [persons count];
-}
-
-
-+ (Person *)currentPerson
-{
-    return currentPerson;
-}
-
-
-+ (NSArray *)workdays
-{
-    return [currentPerson workdays];
-}
-
-
 + (void)saveCurrentPerson:(PersonSaveCompletionBlock)onSave
 {
     if (currentPerson.modified) {
         BOOL isNew = NO;
-        NSUInteger index = [self size];
-        if (currentIndex == index) {
+        NSUInteger index;
+        if (currentPersonIndex == NSNotFound) {
             isNew = YES;
+            index = [self size];
             [persons addObject:currentPerson];
         } else {
-            index = currentIndex;
+            index = currentPersonIndex;
         }
         [self save];
         onSave(index, isNew);
     }
+}
+
+
+#pragma mark - Exact workday methods
+
++ (void)selectWorkdayForDate:(NSDate *)date
+{
+    currentWorkdayIndex = [[currentPerson workdays] indexOfObjectPassingTest:^BOOL(Workday *workday, NSUInteger idx, BOOL *stop)
+    {
+        return [workday.startDate equal:date];
+    }];
+    if (currentWorkdayIndex == NSNotFound) {
+        currentWorkday = [[Workday alloc] init];
+        currentWorkday.startDate = date;
+    } else {
+        currentWorkday = [currentPerson.workdays[currentWorkdayIndex] copy];
+    }
+}
+
+
++ (Workday *)currentWorkday
+{
+    return currentWorkday;
+}
+
+
++ (void)saveCurrentWorkday
+{
+    [currentPerson setPeriodStartingAtDate:currentWorkday.startDate
+                                      work:currentWorkday.workDaysCount
+                                      free:currentWorkday.freeDaysCount];
+    if (currentPerson.modified) {
+        [self save];
+    }
+}
+
+
++ (void)removeCurrentWorkday
+{
+    [currentPerson removePeriodAtIndex:currentWorkdayIndex];
+    currentWorkday = nil;
+    currentWorkdayIndex = NSNotFound;
+    [self save];
+}
+
+
++ (DayType)dayTypeForDate:(NSDate *)date
+{
+    return [currentPerson dayTypeForDate:date];
+}
+
+
+#pragma mark - Generic methods
+
++ (NSUInteger)size
+{
+    return [persons count];
 }
 
 

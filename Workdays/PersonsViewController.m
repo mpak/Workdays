@@ -7,7 +7,6 @@
 //
 
 #import "PersonsViewController.h"
-#import "Person.h"
 #import "NSIndexPath+Unsigned.h"
 #import "PersonsStorage.h"
 
@@ -87,22 +86,11 @@
 {
     UITableViewCell *cell;
     if (indexPath.u_row < [PersonsStorage size]) {
-        Person *person = [PersonsStorage personAtIndex:indexPath.u_row];
+        [PersonsStorage selectPersonAtIndex:indexPath.u_row];
         cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCell"
                                                forIndexPath:indexPath];
-        cell.textLabel.text = person.name;
-
-        NSString *state = @"";
-        NSUInteger index = 0;
-        switch([person dayTypeForDate:[NSDate date] index:&index]) {
-            case WorkDay: state = @"Рабочий"; break;
-            case FreeDay: state = @"Выходной"; break;
-            case UnknownDay:break;
-        }
-        if (index) {
-            state = [state stringByAppendingFormat:@" %u", index];
-        }
-        cell.detailTextLabel.text = state;
+        cell.textLabel.text = [PersonsStorage personName];
+        cell.detailTextLabel.text = [PersonsStorage personDetails];
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"AddPersonCell"
                                                forIndexPath:indexPath];

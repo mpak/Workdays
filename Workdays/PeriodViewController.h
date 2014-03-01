@@ -10,8 +10,4 @@
 
 @interface PeriodViewController : UITableViewController
 
-@property (nonatomic, strong) NSDate *date;
-@property (nonatomic, assign) NSUInteger workDays;
-@property (nonatomic, assign) NSUInteger freeDays;
-
 @end

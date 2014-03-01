@@ -6,15 +6,8 @@
 #import "WorkdaysViewController.h"
 #import "ActionForEditGestureRecognizer.h"
 #import "Workday.h"
-#import "PeriodViewController.h"
 #import "RDVCalendarDayCell.h"
 #import "PersonsStorage.h"
-#import "Person.h"
-
-
-@interface WorkdaysViewController () <RDVCalendarViewDelegate>
-@property (nonatomic, weak) NSArray *workdays;
-@end
 
 
 @implementation WorkdaysViewController
@@ -23,8 +16,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.workdays = [PersonsStorage workdays];
 
     [ActionForEditGestureRecognizer applyTo:self.calendarView
                                  withTarget:self
@@ -56,7 +47,7 @@
              atIndex:(NSInteger)index
 {
     NSDate *date = [self.calendarView dateForIndex:index];
-    if ([[PersonsStorage currentPerson] dayTypeForDate:date] == WorkDay) {
+    if ([PersonsStorage dayTypeForDate:date] == WorkDay) {
         dayCell.highlighted = YES;
     }
 }
@@ -84,32 +75,21 @@ shouldSelectCellAtIndex:(NSInteger)index
                  sender:(id)date
 {
     if ([segue.identifier isEqualToString:@"EditPeriod"]) {
-        Workday *workday = nil;
-        for (Workday *wd in self.workdays) {
-            if ([wd.startDate isEqualToDate:date]) {
-                workday = wd;
-                break;
-            }
-        }
-        UINavigationController *navigationController = segue.destinationViewController;
-        PeriodViewController *periodViewController = navigationController.viewControllers[0];
-        if (workday) {
-            periodViewController.date = workday.startDate;
-            periodViewController.workDays = workday.workDaysCount;
-            periodViewController.freeDays = workday.freeDaysCount;
-        } else {
-            periodViewController.date = date;
-        }
+        [PersonsStorage selectWorkdayForDate:date];
     }
 }
 
 
 - (IBAction)savePeriod:(UIStoryboardSegue *)segue
 {
-    PeriodViewController *periodViewController = segue.sourceViewController;
-    [[PersonsStorage currentPerson] setPeriodStartingAtDate:periodViewController.date
-                                                       work:periodViewController.workDays
-                                                       free:periodViewController.freeDays];
+    [PersonsStorage saveCurrentWorkday];
+    [[self calendarView] reloadData];
+}
+
+
+- (IBAction)removePeriod:(UIStoryboardSegue *)segue
+{
+    [PersonsStorage removeCurrentWorkday];
     [[self calendarView] reloadData];
 }
 

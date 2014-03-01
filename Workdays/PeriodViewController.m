@@ -7,12 +7,14 @@
 //
 
 #import "PeriodViewController.h"
+#import "PersonsStorage.h"
 
 
-@interface PeriodViewController ()
+@interface PeriodViewController () <UIActionSheetDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *workDaysField;
 @property (nonatomic, weak) IBOutlet UITextField *freeDaysField;
 @property (nonatomic, weak) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) Workday *workday;
 @end
 
 
@@ -23,18 +25,28 @@
 {
     [super viewDidLoad];
 
+    self.workday = [PersonsStorage currentWorkday];
+
     [self.view addGestureRecognizer:self.tapGestureRecognizer];
+
+    if (self.workday.workDaysCount || self.workday.freeDaysCount) {
+        UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
+                                                                                      target:self
+                                                                                      action:@selector(deletePeriod)];
+        [self.navigationController setToolbarHidden:NO];
+        [self setToolbarItems:@[deleteButton]];
+    }
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.navigationItem.title = [dateFormatter stringFromDate:self.date];
-    if (self.workDays > 0) {
+    self.navigationItem.title = [dateFormatter stringFromDate:self.workday.startDate];
+    if (self.workday.workDaysCount > 0) {
         self.workDaysField.text = [NSString stringWithFormat:@"%lu",
-                                                             (unsigned long)self.workDays];
+                                                             (unsigned long)self.workday.workDaysCount];
     }
-    if (self.freeDays > 0) {
+    if (self.workday.freeDaysCount > 0) {
         self.freeDaysField.text = [NSString stringWithFormat:@"%lu",
-                                                             (unsigned long)self.freeDays];
+                                                             (unsigned long)self.workday.freeDaysCount];
     }
 }
 
@@ -42,6 +54,18 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+
+- (void)deletePeriod
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Удалить?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Отмена"
+                                         destructiveButtonTitle:@"Удалить!"
+                                              otherButtonTitles:nil];
+    sheet.actionSheetStyle = UIActionSheetStyleAutomatic;
+    [sheet showFromToolbar:self.navigationController.toolbar];
 }
 
 
@@ -76,9 +100,9 @@
                                   sender:(id)sender
 {
     if ([identifier isEqualToString:@"SavePeriod"]) {
-        self.workDays = (NSUInteger)[self.workDaysField.text intValue];
-        self.freeDays = (NSUInteger)[self.freeDaysField.text intValue];
-        if (!self.workDays && !self.freeDays) {
+        self.workday.workDaysCount = (NSUInteger)[self.workDaysField.text intValue];
+        self.workday.freeDaysCount = (NSUInteger)[self.freeDaysField.text intValue];
+        if (!self.workday.workDaysCount && !self.workday.freeDaysCount) {
             [[[UIAlertView alloc] initWithTitle:nil
                                         message:@"Длительность не заполнена"
                                        delegate:nil
@@ -93,10 +117,15 @@
 
 - (IBAction)cancel
 {
-    // FIXME: on cancel already selected cell will be deselected,
-    // FIXME replace with unwind segue?
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier:@"RemovePeriod" sender:nil];
+    }
 }
 
 @end
