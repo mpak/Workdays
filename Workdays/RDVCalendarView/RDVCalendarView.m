@@ -88,7 +88,7 @@
         
         NSCalendar *calendar = [self calendar];
         
-        _currentDay = [calendar components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
+        [self refreshCurrentDay];
         
         NSDate *currentDate = [NSDate date];
         
@@ -121,6 +121,11 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)refreshCurrentDay
+{
+    _currentDay = [[self calendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
 }
 
 - (void)layoutSubviews {
@@ -352,6 +357,7 @@
 #pragma mark - Reloading the Calendar view
 
 - (void)reloadData {
+    [self refreshCurrentDay];
     for (RDVCalendarDayCell *visibleCell in [self visibleCells]) {
         [visibleCell removeFromSuperview];
         [visibleCell prepareForReuse];
