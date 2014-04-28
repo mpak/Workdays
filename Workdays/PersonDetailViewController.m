@@ -67,7 +67,7 @@
         _nameLabel.textColor = [UIColor blackColor];
         symTraits = UIFontDescriptorClassSansSerif;
     } else {
-        _nameLabel.text = @"Имя";
+        _nameLabel.text = NSLocalizedString(@"NAME_PLACEHOLDER", @"Name placeholder");
         _nameLabel.textColor = [UIColor lightGrayColor];
         symTraits = UIFontDescriptorTraitItalic;
     }

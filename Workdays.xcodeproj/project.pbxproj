@@ -23,6 +23,7 @@
 		1A728DC55E2498A3CE497561 /* CalendarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7282375EF7B1CD43D1FF4A /* CalendarPageViewController.m */; };
 		1A728E3CF1BD18D40548C0DD /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
 		1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
+		C523F369190FCCB500E2DCC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C523F36B190FCCB500E2DCC2 /* Localizable.strings */; };
 		C5D0703118A53EC800BD5152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703018A53EC800BD5152 /* Foundation.framework */; };
 		C5D0703318A53EC800BD5152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703218A53EC800BD5152 /* CoreGraphics.framework */; };
 		C5D0703518A53EC800BD5152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703418A53EC800BD5152 /* UIKit.framework */; };
@@ -81,15 +82,17 @@
 		1A728DB94F936D0CC02FEA0A /* ActionForEditGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionForEditGestureRecognizer.h; sourceTree = "<group>"; };
 		1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
 		1A728F4099457F4816FC10F2 /* PeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodViewController.h; sourceTree = "<group>"; };
+		C523F36A190FCCB500E2DCC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C550FB311919644F005EE3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C55575A61916B55600429BE8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55575A71916B55900429BE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5C5955718B7A9BC0003A03D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		C5C5955818B7A9BC0003A03D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5C5955918B7A9BC0003A03D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5D0702D18A53EC800BD5152 /* Workdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D0703018A53EC800BD5152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C5D0703218A53EC800BD5152 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C5D0703418A53EC800BD5152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C5D0703818A53EC800BD5152 /* Workdays-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Workdays-Info.plist"; sourceTree = "<group>"; };
-		C5D0703A18A53EC800BD5152 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5D0703C18A53EC800BD5152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D0703E18A53EC800BD5152 /* Workdays-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Workdays-Prefix.pch"; sourceTree = "<group>"; };
 		C5D0703F18A53EC800BD5152 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -229,6 +232,7 @@
 				1A728492F563397DB8FFCE6F /* Calendar */,
 				1A72830EC9C35D474FC5844F /* Categories */,
 				1A72854B2F7F3E8297D42A0C /* DataModel */,
+				C523F36B190FCCB500E2DCC2 /* Localizable.strings */,
 			);
 			path = Workdays;
 			sourceTree = "<group>";
@@ -343,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D0704918A53EC800BD5152 /* Images.xcassets in Resources */,
+				C523F369190FCCB500E2DCC2 /* Localizable.strings in Resources */,
 				C5D0703B18A53EC800BD5152 /* InfoPlist.strings in Resources */,
 				C5D0704418A53EC800BD5152 /* Main.storyboard in Resources */,
 			);
@@ -403,11 +408,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C523F36B190FCCB500E2DCC2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C523F36A190FCCB500E2DCC2 /* ru */,
+				C550FB311919644F005EE3E4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C5D0703918A53EC800BD5152 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C5D0703A18A53EC800BD5152 /* en */,
-				C5C5955818B7A9BC0003A03D /* ru */,
+				C55575A61916B55600429BE8 /* ru */,
+				C55575A71916B55900429BE8 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Workdays
+
+  Created by Andrey Fedorov on 29.04.14.
+  Copyright (c) 2014 Andrey Fedorov. All rights reserved.
+*/
+
+"REMOVE_PERIOD_QUESTION" = "Удалить?";
+"CANCEL_PERIOD_REMOVE" = "Отмена";
+"CONFIRM_PERIOD_REMOVE" = "Удалить";
+"EMPTY_DURATION_ERROR" = "Должна быть указана хотя бы одна длительность";
+"NAME_PLACEHOLDER" = "Имя";
+"WORKDAY_LABEL" = "Рабочий";
+"RESTDAY_LABEL" = "Выходной";

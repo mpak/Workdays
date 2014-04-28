@@ -59,10 +59,10 @@
 
 - (void)deletePeriod
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Удалить?"
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"REMOVE_PERIOD_QUESTION", @"Remove period title")
                                                        delegate:self
-                                              cancelButtonTitle:@"Отмена"
-                                         destructiveButtonTitle:@"Удалить!"
+                                              cancelButtonTitle:NSLocalizedString(@"CANCEL_PERIOD_REMOVE", @"Cancel button")
+                                         destructiveButtonTitle:NSLocalizedString(@"CONFIRM_PERIOD_REMOVE", "Confirm removing button")
                                               otherButtonTitles:nil];
     sheet.actionSheetStyle = UIActionSheetStyleAutomatic;
     [sheet showFromToolbar:self.navigationController.toolbar];
@@ -104,7 +104,7 @@
         self.workday.freeDaysCount = (NSUInteger)[self.freeDaysField.text intValue];
         if (!self.workday.workDaysCount && !self.workday.freeDaysCount) {
             [[[UIAlertView alloc] initWithTitle:nil
-                                        message:@"Длительность не заполнена"
+                                        message:NSLocalizedString(@"EMPTY_DURATION_ERROR", @"Empty duration error message")
                                        delegate:nil
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil] show];

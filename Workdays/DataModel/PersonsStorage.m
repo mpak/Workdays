@@ -59,8 +59,8 @@ static NSUInteger currentWorkdayIndex = NSNotFound;
     NSString *state = @"";
     NSUInteger index = 0;
     switch([currentPerson dayTypeForDate:[NSDate date] index:&index]) {
-        case WorkDay: state = @"Рабочий"; break;
-        case FreeDay: state = @"Выходной"; break;
+        case WorkDay: state = NSLocalizedString(@"WORKDAY_LABEL", @"Workday label on persons list"); break;
+        case FreeDay: state = NSLocalizedString(@"RESTDAY_LABEL", @"Restday label on persons list"); break;
         case UnknownDay:break;
     }
     if (index) {
