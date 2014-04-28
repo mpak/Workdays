@@ -62,11 +62,13 @@ shouldSelectCellAtIndex:(NSInteger)index
 
 - (void)editPeriod:(UIGestureRecognizer *)gesture
 {
-    if (gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateEnded) {
+    if ([ActionForEditGestureRecognizer emitted:gesture]) {
         CGPoint touchPoint = [gesture locationInView:self.calendarView];
         NSUInteger touchedIndex = [self.calendarView indexForDayCellAtPoint:touchPoint];
-        [self performSegueWithIdentifier:@"EditPeriod"
-                                  sender:[self.calendarView dateForIndex:touchedIndex]];
+        if (touchedIndex != NSNotFound) {
+            [self performSegueWithIdentifier:@"EditPeriod"
+                                      sender:[self.calendarView dateForIndex:touchedIndex]];
+        }
     }
 }
 

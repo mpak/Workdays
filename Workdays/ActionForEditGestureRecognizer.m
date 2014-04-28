@@ -25,4 +25,10 @@
     [view addGestureRecognizer:longPressGesture];
 }
 
+
++ (BOOL)emitted:(UIGestureRecognizer *)recognizer
+{
+    return recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateEnded;
+}
+
 @end

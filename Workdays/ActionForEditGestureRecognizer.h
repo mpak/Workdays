@@ -12,4 +12,5 @@
      withTarget:(id)target
          action:(SEL)action;
 
++ (BOOL)emitted:(UIGestureRecognizer *)recognizer;
 @end
