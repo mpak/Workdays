@@ -37,6 +37,9 @@
         [self setToolbarItems:@[deleteButton]];
     }
 
+    // remove row separators
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     self.navigationItem.title = [dateFormatter stringFromDate:self.workday.startDate];
