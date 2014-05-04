@@ -40,9 +40,13 @@
     // remove row separators
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.navigationItem.title = [dateFormatter stringFromDate:self.workday.startDate];
+    [self setTitle];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(currentLocaleDidChange:)
+                                                 name:NSCurrentLocaleDidChangeNotification
+                                               object:nil];
+
     if (self.workday.workDaysCount > 0) {
         self.workDaysField.text = [NSString stringWithFormat:@"%lu",
                                                              (unsigned long)self.workday.workDaysCount];
@@ -54,9 +58,30 @@
 }
 
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+
+- (void)currentLocaleDidChange:(NSNotification *)notification
+{
+    [self setTitle];
+}
+
+
+- (void)setTitle
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    self.navigationItem.title = [dateFormatter stringFromDate:self.workday.startDate];
 }
 
 
