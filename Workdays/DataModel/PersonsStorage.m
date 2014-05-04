@@ -64,7 +64,7 @@ static NSUInteger currentWorkdayIndex = NSNotFound;
         case UnknownDay:break;
     }
     if (index) {
-        state = [state stringByAppendingFormat:@" %u", index];
+        state = [state stringByAppendingFormat:@" %lu", (unsigned long)index];
     }
     return state;
 }
