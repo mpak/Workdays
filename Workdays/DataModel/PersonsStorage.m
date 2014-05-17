@@ -101,19 +101,19 @@ static NSUInteger currentWorkdayIndex = NSNotFound;
 
 + (void)saveCurrentPerson:(PersonSaveCompletionBlock)onSave
 {
-    if (currentPerson.modified) {
-        BOOL isNew = NO;
-        NSUInteger index;
-        if (currentPersonIndex == NSNotFound) {
-            isNew = YES;
-            index = [self size];
-            [persons addObject:currentPerson];
-        } else {
-            index = currentPersonIndex;
-        }
-        [self save];
-        onSave(index, isNew);
+    BOOL isNew = NO;
+    NSUInteger index;
+    if (currentPersonIndex == NSNotFound) {
+        isNew = YES;
+        index = [self size];
+        [persons addObject:currentPerson];
+    } else {
+        index = currentPersonIndex;
     }
+    if (currentPerson.modified) {
+        [self save];
+    }
+    onSave(index, isNew);
 }
 
 
