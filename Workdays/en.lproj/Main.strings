@@ -1,0 +1,18 @@
+
+/* Class = "IBUINavigationItem"; title = "2013-12-27"; ObjectID = "354-h0-PRy"; */
+"354-h0-PRy.title" = "2013-12-27";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "EAS-os-Mjr"; */
+"EAS-os-Mjr.text" = "Name";
+
+/* Class = "IBUITextField"; placeholder = "Name"; ObjectID = "F5n-q0-Gl7"; */
+"F5n-q0-Gl7.placeholder" = "Name";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Rest days:"; ObjectID = "dVs-hX-PDd"; */
+"dVs-hX-PDd.headerTitle" = "Rest days:";
+
+/* Class = "IBUITableViewSection"; headerTitle = "Work days:"; ObjectID = "kMt-ib-gYK"; */
+"kMt-ib-gYK.headerTitle" = "Work days:";
+
+/* Class = "IBUILabel"; text = "Rest/Work"; ObjectID = "qfw-fp-WSP"; */
+"qfw-fp-WSP.text" = "Rest/Work";

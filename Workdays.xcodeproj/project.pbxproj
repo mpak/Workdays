@@ -82,6 +82,7 @@
 		1A728DB94F936D0CC02FEA0A /* ActionForEditGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionForEditGestureRecognizer.h; sourceTree = "<group>"; };
 		1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
 		1A728F4099457F4816FC10F2 /* PeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodViewController.h; sourceTree = "<group>"; };
+		C51BEEF81927B68F00334C8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C523F36A190FCCB500E2DCC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C550FB311919644F005EE3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C55575A61916B55600429BE8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -431,6 +432,7 @@
 			children = (
 				C5D0704318A53EC800BD5152 /* Base */,
 				C5C5955718B7A9BC0003A03D /* ru */,
+				C51BEEF81927B68F00334C8D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
