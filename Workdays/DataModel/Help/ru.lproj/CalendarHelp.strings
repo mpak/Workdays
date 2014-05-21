@@ -1,3 +1,6 @@
 
 /* Class = "IBUILabel"; text = "Double tap or long\npress for edit"; ObjectID = "A84-rF-QFi"; */
 "A84-rF-QFi.text" = "Для изменения -\nдвойной тап или удерживание";
+
+/* Class = "IBUILabel"; text = "Swipe to switch months"; ObjectID = "IEt-Tj-4dz"; */
+"IEt-Tj-4dz.text" = "Месяца переключаются листанием";

@@ -27,6 +27,21 @@ press for editing</string>
                     <rect key="frame" x="130" y="195" width="71" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowSwipeLeft" id="cXW-jW-vWd">
+                    <rect key="frame" x="20" y="374" width="83" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArrowSwipeRight" id="Xo8-ab-3Vp">
+                    <rect key="frame" x="217" y="374" width="83" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to switch months" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IEt-Tj-4dz">
+                    <rect key="frame" x="55" y="327" width="210" height="69"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -36,6 +51,8 @@ press for editing</string>
     </objects>
     <resources>
         <image name="ArrowNorth" width="45" height="71"/>
+        <image name="ArrowSwipeLeft" width="83" height="26"/>
+        <image name="ArrowSwipeRight" width="83" height="26"/>
         <image name="ArrowWest" width="71" height="45"/>
     </resources>
 </document>
