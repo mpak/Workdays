@@ -14,6 +14,7 @@
 		1A7283E64E430DC123CC6DAB /* PersonsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */; };
 		1A7284906DE6FEAF462713BD /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */; };
 		1A72855FC05E9091D7B7FD28 /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728C1CBB164983570DE738 /* PersonsViewController.m */; };
+		1A72866FE7119CCCCAA67ED0 /* HelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7283F172B98A2FE05E1200 /* HelpModel.m */; };
 		1A728830A0707AED96291F5A /* PeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7281069670DD5E51B63A81 /* PeriodViewController.m */; };
 		1A7288A30722CDA191442C67 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728B56D47AE6D5FF005338 /* Person.m */; };
 		1A728A1AD72EEFA639080E35 /* WorkdaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7285D557FB8965190823C9 /* WorkdaysViewController.m */; };
@@ -24,6 +25,8 @@
 		1A728E3CF1BD18D40548C0DD /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
 		1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
 		C523F369190FCCB500E2DCC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C523F36B190FCCB500E2DCC2 /* Localizable.strings */; };
+		C56BD3D9192CF8090026D051 /* CalendarHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56BD3DB192CF8090026D051 /* CalendarHelp.xib */; };
+		C57FDACA192A3FB20058C8BA /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = C57FDAC9192A3FB20058C8BA /* HelpView.m */; };
 		C5D0703118A53EC800BD5152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703018A53EC800BD5152 /* Foundation.framework */; };
 		C5D0703318A53EC800BD5152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703218A53EC800BD5152 /* CoreGraphics.framework */; };
 		C5D0703518A53EC800BD5152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703418A53EC800BD5152 /* UIKit.framework */; };
@@ -59,6 +62,7 @@
 		1A72825F53A6E193508DFBD3 /* UIApplication+HideKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+HideKeyboard.m"; sourceTree = "<group>"; };
 		1A728274C0B283A0680BD573 /* CalendarPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPages.h; sourceTree = "<group>"; };
 		1A728283C76053F71ABAC4FA /* RDVCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVCalendarDayCell.h; sourceTree = "<group>"; };
+		1A7283F172B98A2FE05E1200 /* HelpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpModel.m; sourceTree = "<group>"; };
 		1A7283FD1059B72B74675E64 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
 		1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionForEditGestureRecognizer.m; sourceTree = "<group>"; };
 		1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVCalendarView.m; sourceTree = "<group>"; };
@@ -81,12 +85,18 @@
 		1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ComparisonAndDays.m"; sourceTree = "<group>"; };
 		1A728DB94F936D0CC02FEA0A /* ActionForEditGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionForEditGestureRecognizer.h; sourceTree = "<group>"; };
 		1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
+		1A728F2DD44CC8670192A0CA /* HelpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpModel.h; sourceTree = "<group>"; };
 		1A728F4099457F4816FC10F2 /* PeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodViewController.h; sourceTree = "<group>"; };
 		C51BEEF81927B68F00334C8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C523F36A190FCCB500E2DCC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C54DD43E192D04B400C72EC6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CalendarHelp.strings; sourceTree = "<group>"; };
+		C54DD43F192D04B700C72EC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CalendarHelp.strings; sourceTree = "<group>"; };
 		C550FB311919644F005EE3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C55575A61916B55600429BE8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C55575A71916B55900429BE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C56BD3DA192CF8090026D051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CalendarHelp.xib; sourceTree = "<group>"; };
+		C57FDAC8192A3FB20058C8BA /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
+		C57FDAC9192A3FB20058C8BA /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
 		C5C5955718B7A9BC0003A03D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		C5C5955918B7A9BC0003A03D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5D0702D18A53EC800BD5152 /* Workdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,8 +176,21 @@
 				1A7288289487525782250C96 /* Person.h */,
 				1A7287A71C81F3388825246C /* Workday.h */,
 				1A728658ABFC914948024FB5 /* Workday.m */,
+				1A7288FAEE24D9D611F546CC /* Help */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		1A7288FAEE24D9D611F546CC /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				C56BD3DB192CF8090026D051 /* CalendarHelp.xib */,
+				1A7283F172B98A2FE05E1200 /* HelpModel.m */,
+				1A728F2DD44CC8670192A0CA /* HelpModel.h */,
+				C57FDAC8192A3FB20058C8BA /* HelpView.h */,
+				C57FDAC9192A3FB20058C8BA /* HelpView.m */,
+			);
+			path = Help;
 			sourceTree = "<group>";
 		};
 		1A728C1DAEB1428C2B842950 /* RDVCalendarView */ = {
@@ -351,6 +374,7 @@
 				C523F369190FCCB500E2DCC2 /* Localizable.strings in Resources */,
 				C5D0703B18A53EC800BD5152 /* InfoPlist.strings in Resources */,
 				C5D0704418A53EC800BD5152 /* Main.storyboard in Resources */,
+				C56BD3D9192CF8090026D051 /* CalendarHelp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +411,8 @@
 				1A7283E64E430DC123CC6DAB /* PersonsStorage.m in Sources */,
 				1A7288A30722CDA191442C67 /* Person.m in Sources */,
 				1A7282CF8E918DB7F97C2BDA /* Workday.m in Sources */,
+				1A72866FE7119CCCCAA67ED0 /* HelpModel.m in Sources */,
+				C57FDACA192A3FB20058C8BA /* HelpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +442,16 @@
 				C550FB311919644F005EE3E4 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C56BD3DB192CF8090026D051 /* CalendarHelp.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C56BD3DA192CF8090026D051 /* Base */,
+				C54DD43E192D04B400C72EC6 /* ru */,
+				C54DD43F192D04B700C72EC6 /* en */,
+			);
+			name = CalendarHelp.xib;
 			sourceTree = "<group>";
 		};
 		C5D0703918A53EC800BD5152 /* InfoPlist.strings */ = {

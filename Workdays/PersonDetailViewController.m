@@ -9,6 +9,7 @@
 #import "PersonDetailViewController.h"
 #import "ActionForEditGestureRecognizer.h"
 #import "PersonsStorage.h"
+#import "HelpModel.h"
 
 
 @interface PersonDetailViewController () <UITextFieldDelegate>
@@ -100,6 +101,7 @@
     NSString *text = [_nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [PersonsStorage setPersonName:text];
     [self updateNameLabel];
+    [HelpModel showCalendarHelp];
 }
 
 
