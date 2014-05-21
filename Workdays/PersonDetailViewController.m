@@ -31,6 +31,8 @@
     _nameLabel = [[UILabel alloc] initWithFrame:_nameField.frame];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.userInteractionEnabled = YES;
+    _nameLabel.adjustsFontSizeToFitWidth = YES;
+    _nameLabel.minimumScaleFactor = 0.6;
     [ActionForEditGestureRecognizer applyTo:_nameLabel
                                  withTarget:self
                                      action:@selector(editName)];
