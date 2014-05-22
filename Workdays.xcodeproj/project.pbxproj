@@ -167,6 +167,14 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		1A7284E38B1C3C2AD89B302F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C56BD3DB192CF8090026D051 /* CalendarHelp.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1A72854B2F7F3E8297D42A0C /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,11 +192,11 @@
 		1A7288FAEE24D9D611F546CC /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				C56BD3DB192CF8090026D051 /* CalendarHelp.xib */,
 				1A7283F172B98A2FE05E1200 /* HelpModel.m */,
 				1A728F2DD44CC8670192A0CA /* HelpModel.h */,
 				C57FDAC8192A3FB20058C8BA /* HelpView.h */,
 				C57FDAC9192A3FB20058C8BA /* HelpView.m */,
+				1A7284E38B1C3C2AD89B302F /* Views */,
 			);
 			path = Help;
 			sourceTree = "<group>";
