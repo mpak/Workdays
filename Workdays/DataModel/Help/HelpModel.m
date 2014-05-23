@@ -13,12 +13,11 @@ static NSString * const CalendarHelpWasDisplayed = @"CalendarHelpWasDisplayed";
 
 + (void)showCalendarHelp
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:CalendarHelpWasDisplayed]) return;
-
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults boolForKey:CalendarHelpWasDisplayed]) return;
     [HelpView show:@"CalendarHelp"];
-
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CalendarHelpWasDisplayed];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [userDefaults setBool:YES forKey:CalendarHelpWasDisplayed];
+    [userDefaults synchronize];
 }
 
 @end
