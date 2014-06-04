@@ -82,10 +82,10 @@
     NSUInteger remainder = diff % totalDays;
 
     if (remainder < workday.workDaysCount) {
-        if (index) *index = remainder + 1;
+        if (index && workday.freeDaysCount) *index = remainder + 1;
         return WorkDay;
     }
-    if (index) *index = remainder - workday.workDaysCount + 1;
+    if (index && workday.workDaysCount) *index = remainder - workday.workDaysCount + 1;
     return FreeDay;
 }
 
