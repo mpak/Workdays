@@ -35,7 +35,7 @@
 #    For the main ones I use (e.g. Eclipse), it should be excluded
 #    from source-control, but YMMV
 
-*.lock
+#*.lock
 
 #
 # profile - REMOVED temporarily (on double-checking, this seems incorrect; I can't find it in OS X docs?)
@@ -152,6 +152,14 @@ xcuserdata
 # We're using source-control, so this is a "feature" that we do not want!
 
 *.moved-aside
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+#
+Pods/
 
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are

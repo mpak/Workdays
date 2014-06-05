@@ -1,0 +1,10 @@
+PODS:
+  - Subliminal (1.1.0)
+
+DEPENDENCIES:
+  - Subliminal
+
+SPEC CHECKSUMS:
+  Subliminal: ed7811c592f738e99e0d89b80dbbeb08af14f1bf
+
+COCOAPODS: 0.33.1

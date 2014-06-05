@@ -24,6 +24,35 @@
 		1A728DC55E2498A3CE497561 /* CalendarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7282375EF7B1CD43D1FF4A /* CalendarPageViewController.m */; };
 		1A728E3CF1BD18D40548C0DD /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
 		1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
+		60A994F4E8AE4BEE91B2AB95 /* libPods-IntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0E569BD05947A3B984C2B3 /* libPods-IntegrationTests.a */; };
+		C50D550319406BE700ACF319 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0704018A53EC800BD5152 /* AppDelegate.m */; };
+		C50D550419406BE700ACF319 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0703C18A53EC800BD5152 /* main.m */; };
+		C50D550519406BE700ACF319 /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
+		C50D550619406BE700ACF319 /* RDVCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728099677F7FB9938F1C75 /* RDVCalendarDayCell.m */; };
+		C50D550719406BE700ACF319 /* RDVCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728829F3D466DE49061F25 /* RDVCalendarViewController.m */; };
+		C50D550819406BE700ACF319 /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */; };
+		C50D550919406BE700ACF319 /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728C1CBB164983570DE738 /* PersonsViewController.m */; };
+		C50D550A19406BE700ACF319 /* PeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7281069670DD5E51B63A81 /* PeriodViewController.m */; };
+		C50D550B19406BE700ACF319 /* ActionForEditGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */; };
+		C50D550C19406BE700ACF319 /* CalendarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7282375EF7B1CD43D1FF4A /* CalendarPageViewController.m */; };
+		C50D550D19406BE700ACF319 /* CalendarPages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7287A440FC1DC30D0BD096 /* CalendarPages.m */; };
+		C50D550E19406BE700ACF319 /* WorkdaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7285D557FB8965190823C9 /* WorkdaysViewController.m */; };
+		C50D550F19406BE700ACF319 /* UIApplication+HideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72825F53A6E193508DFBD3 /* UIApplication+HideKeyboard.m */; };
+		C50D551019406BE700ACF319 /* NSIndexPath+Unsigned.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728110734EF9DBBA7C116F /* NSIndexPath+Unsigned.m */; };
+		C50D551119406BE700ACF319 /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
+		C50D551219406BE700ACF319 /* PersonsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */; };
+		C50D551319406BE700ACF319 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728B56D47AE6D5FF005338 /* Person.m */; };
+		C50D551419406BE700ACF319 /* Workday.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728658ABFC914948024FB5 /* Workday.m */; };
+		C50D551519406BE700ACF319 /* HelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7283F172B98A2FE05E1200 /* HelpModel.m */; };
+		C50D551619406BE700ACF319 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = C57FDAC9192A3FB20058C8BA /* HelpView.m */; };
+		C50D551819406BE700ACF319 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703218A53EC800BD5152 /* CoreGraphics.framework */; };
+		C50D551919406BE700ACF319 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703418A53EC800BD5152 /* UIKit.framework */; };
+		C50D551A19406BE700ACF319 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D0703018A53EC800BD5152 /* Foundation.framework */; };
+		C50D551C19406BE700ACF319 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D0704818A53EC800BD5152 /* Images.xcassets */; };
+		C50D551D19406BE700ACF319 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C523F36B190FCCB500E2DCC2 /* Localizable.strings */; };
+		C50D551E19406BE700ACF319 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5D0703918A53EC800BD5152 /* InfoPlist.strings */; };
+		C50D551F19406BE700ACF319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D0704218A53EC800BD5152 /* Main.storyboard */; };
+		C50D552019406BE700ACF319 /* CalendarHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56BD3DB192CF8090026D051 /* CalendarHelp.xib */; };
 		C523F369190FCCB500E2DCC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C523F36B190FCCB500E2DCC2 /* Localizable.strings */; };
 		C56BD3D9192CF8090026D051 /* CalendarHelp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56BD3DB192CF8090026D051 /* CalendarHelp.xib */; };
 		C57FDACA192A3FB20058C8BA /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = C57FDAC9192A3FB20058C8BA /* HelpView.m */; };
@@ -87,6 +116,9 @@
 		1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
 		1A728F2DD44CC8670192A0CA /* HelpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpModel.h; sourceTree = "<group>"; };
 		1A728F4099457F4816FC10F2 /* PeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodViewController.h; sourceTree = "<group>"; };
+		25FBFE860200422AA30EA378 /* Pods-IntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntegrationTests.xcconfig"; path = "Pods/Pods-IntegrationTests.xcconfig"; sourceTree = "<group>"; };
+		4D0E569BD05947A3B984C2B3 /* libPods-IntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50D552419406BE700ACF319 /* IntegrationTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrationTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51BEEF81927B68F00334C8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C523F36A190FCCB500E2DCC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C54DD43E192D04B400C72EC6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CalendarHelp.strings; sourceTree = "<group>"; };
@@ -118,6 +150,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C50D551719406BE700ACF319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C50D551819406BE700ACF319 /* CoreGraphics.framework in Frameworks */,
+				C50D551919406BE700ACF319 /* UIKit.framework in Frameworks */,
+				C50D551A19406BE700ACF319 /* Foundation.framework in Frameworks */,
+				60A994F4E8AE4BEE91B2AB95 /* libPods-IntegrationTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D0702A18A53EC800BD5152 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,13 +257,22 @@
 			path = RDVCalendarView;
 			sourceTree = "<group>";
 		};
+		C50D552619406E0B00ACF319 /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IntegrationTests;
+			sourceTree = "<group>";
+		};
 		C5D0702418A53EC800BD5152 = {
 			isa = PBXGroup;
 			children = (
+				C50D552619406E0B00ACF319 /* IntegrationTests */,
 				C5D0703618A53EC800BD5152 /* Workdays */,
 				C5D0705518A53EC800BD5152 /* WorkdaysTests */,
 				C5D0702F18A53EC800BD5152 /* Frameworks */,
 				C5D0702E18A53EC800BD5152 /* Products */,
+				25FBFE860200422AA30EA378 /* Pods-IntegrationTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +281,7 @@
 			children = (
 				C5D0702D18A53EC800BD5152 /* Workdays.app */,
 				C5D0704E18A53EC800BD5152 /* WorkdaysTests.xctest */,
+				C50D552419406BE700ACF319 /* IntegrationTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +293,7 @@
 				C5D0703218A53EC800BD5152 /* CoreGraphics.framework */,
 				C5D0703418A53EC800BD5152 /* UIKit.framework */,
 				C5D0704F18A53EC800BD5152 /* XCTest.framework */,
+				4D0E569BD05947A3B984C2B3 /* libPods-IntegrationTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +355,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C50D550119406BE700ACF319 /* IntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C50D552119406BE700ACF319 /* Build configuration list for PBXNativeTarget "IntegrationTests" */;
+			buildPhases = (
+				19BDD86A2A4440D98C9C1800 /* Check Pods Manifest.lock */,
+				C50D550219406BE700ACF319 /* Sources */,
+				C50D551719406BE700ACF319 /* Frameworks */,
+				C50D551B19406BE700ACF319 /* Resources */,
+				89CCEFE6B79F44BDB71E9A31 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationTests;
+			productName = Workdays;
+			productReference = C50D552419406BE700ACF319 /* IntegrationTests.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C5D0702C18A53EC800BD5152 /* Workdays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5D0705F18A53EC800BD5152 /* Build configuration list for PBXNativeTarget "Workdays" */;
@@ -369,11 +442,24 @@
 			targets = (
 				C5D0702C18A53EC800BD5152 /* Workdays */,
 				C5D0704D18A53EC800BD5152 /* WorkdaysTests */,
+				C50D550119406BE700ACF319 /* IntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C50D551B19406BE700ACF319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C50D551C19406BE700ACF319 /* Images.xcassets in Resources */,
+				C50D551D19406BE700ACF319 /* Localizable.strings in Resources */,
+				C50D551E19406BE700ACF319 /* InfoPlist.strings in Resources */,
+				C50D551F19406BE700ACF319 /* Main.storyboard in Resources */,
+				C50D552019406BE700ACF319 /* CalendarHelp.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D0702B18A53EC800BD5152 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,7 +482,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19BDD86A2A4440D98C9C1800 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		89CCEFE6B79F44BDB71E9A31 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-IntegrationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		C50D550219406BE700ACF319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C50D550319406BE700ACF319 /* AppDelegate.m in Sources */,
+				C50D550419406BE700ACF319 /* main.m in Sources */,
+				C50D550519406BE700ACF319 /* RDVCalendarView.m in Sources */,
+				C50D550619406BE700ACF319 /* RDVCalendarDayCell.m in Sources */,
+				C50D550719406BE700ACF319 /* RDVCalendarViewController.m in Sources */,
+				C50D550819406BE700ACF319 /* PersonDetailViewController.m in Sources */,
+				C50D550919406BE700ACF319 /* PersonsViewController.m in Sources */,
+				C50D550A19406BE700ACF319 /* PeriodViewController.m in Sources */,
+				C50D550B19406BE700ACF319 /* ActionForEditGestureRecognizer.m in Sources */,
+				C50D550C19406BE700ACF319 /* CalendarPageViewController.m in Sources */,
+				C50D550D19406BE700ACF319 /* CalendarPages.m in Sources */,
+				C50D550E19406BE700ACF319 /* WorkdaysViewController.m in Sources */,
+				C50D550F19406BE700ACF319 /* UIApplication+HideKeyboard.m in Sources */,
+				C50D551019406BE700ACF319 /* NSIndexPath+Unsigned.m in Sources */,
+				C50D551119406BE700ACF319 /* NSDate+ComparisonAndDays.m in Sources */,
+				C50D551219406BE700ACF319 /* PersonsStorage.m in Sources */,
+				C50D551319406BE700ACF319 /* Person.m in Sources */,
+				C50D551419406BE700ACF319 /* Workday.m in Sources */,
+				C50D551519406BE700ACF319 /* HelpModel.m in Sources */,
+				C50D551619406BE700ACF319 /* HelpView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C5D0702918A53EC800BD5152 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,6 +639,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C50D552219406BE700ACF319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FBFE860200422AA30EA378 /* Pods-IntegrationTests.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Workdays/Workdays-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Workdays/Workdays-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = IntegrationTests;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C50D552319406BE700ACF319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FBFE860200422AA30EA378 /* Pods-IntegrationTests.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Workdays/Workdays-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Workdays/Workdays-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = IntegrationTests;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		C5D0705D18A53EC800BD5152 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -639,6 +819,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C50D552119406BE700ACF319 /* Build configuration list for PBXNativeTarget "IntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C50D552219406BE700ACF319 /* Debug */,
+				C50D552319406BE700ACF319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C5D0702818A53EC800BD5152 /* Build configuration list for PBXProject "Workdays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
