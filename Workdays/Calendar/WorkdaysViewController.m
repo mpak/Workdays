@@ -8,6 +8,7 @@
 #import "Workday.h"
 #import "RDVCalendarDayCell.h"
 #import "PersonsStorage.h"
+#import "HelpView.h"
 
 
 @implementation WorkdaysViewController
@@ -63,6 +64,7 @@ shouldSelectCellAtIndex:(NSInteger)index
 - (void)editPeriod:(UIGestureRecognizer *)gesture
 {
     if ([ActionForEditGestureRecognizer emitted:gesture]) {
+        if ([HelpView displayed]) return;
         CGPoint touchPoint = [gesture locationInView:self.calendarView];
         NSUInteger touchedIndex = [self.calendarView indexForDayCellAtPoint:touchPoint];
         if (touchedIndex != NSNotFound) {

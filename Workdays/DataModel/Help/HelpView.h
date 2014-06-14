@@ -8,6 +8,7 @@
 
 @interface HelpView : UIView
 
++ (BOOL)displayed;
 + (void)show:(NSString *)nibName;
 
 @end

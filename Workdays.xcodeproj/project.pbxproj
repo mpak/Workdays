@@ -22,6 +22,7 @@
 		1A728B836AA67FF11EE20B7F /* RDVCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728829F3D466DE49061F25 /* RDVCalendarViewController.m */; };
 		1A728D0BFA7F5A8D7F9C3B96 /* RDVCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728099677F7FB9938F1C75 /* RDVCalendarDayCell.m */; };
 		1A728DC55E2498A3CE497561 /* CalendarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7282375EF7B1CD43D1FF4A /* CalendarPageViewController.m */; };
+		1A728E22B8DB216F93D718BB /* CalendarHelpTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728DD1B82A430F0A8B61EF /* CalendarHelpTest.m */; };
 		1A728E3CF1BD18D40548C0DD /* RDVCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */; };
 		1A728F5685FEFB06443DE32A /* NSDate+ComparisonAndDays.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */; };
 		60A994F4E8AE4BEE91B2AB95 /* libPods-IntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0E569BD05947A3B984C2B3 /* libPods-IntegrationTests.a */; };
@@ -113,6 +114,7 @@
 		1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
 		1A728D57239733B7174C4C60 /* NSDate+ComparisonAndDays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ComparisonAndDays.m"; sourceTree = "<group>"; };
 		1A728DB94F936D0CC02FEA0A /* ActionForEditGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionForEditGestureRecognizer.h; sourceTree = "<group>"; };
+		1A728DD1B82A430F0A8B61EF /* CalendarHelpTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarHelpTest.m; sourceTree = "<group>"; };
 		1A728E0AA4E026BDB62827E1 /* PersonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
 		1A728F2DD44CC8670192A0CA /* HelpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpModel.h; sourceTree = "<group>"; };
 		1A728F4099457F4816FC10F2 /* PeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodViewController.h; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		C50D552619406E0B00ACF319 /* IntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A728DD1B82A430F0A8B61EF /* CalendarHelpTest.m */,
 			);
 			path = IntegrationTests;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				C50D551419406BE700ACF319 /* Workday.m in Sources */,
 				C50D551519406BE700ACF319 /* HelpModel.m in Sources */,
 				C50D551619406BE700ACF319 /* HelpView.m in Sources */,
+				1A728E22B8DB216F93D718BB /* CalendarHelpTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
