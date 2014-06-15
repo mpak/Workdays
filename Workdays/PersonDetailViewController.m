@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
 
+    _nameField.accessibilityLabel = NSLocalizedString(@"NAME_PLACEHOLDER", @"Name");
+
     _nameLabel = [[UILabel alloc] initWithFrame:_nameField.frame];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.userInteractionEnabled = YES;
@@ -42,16 +44,24 @@
         [_nameField performSelectorOnMainThread:@selector(becomeFirstResponder)
                                      withObject:nil
                                   waitUntilDone:NO];
+        [HelpModel skipNextHelp];
     } else {
         [self updateNameLabel];
     }
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [HelpModel showCalendarHelp];
+}
+
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     // back button clicked
-    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+    if ([self isMovingFromParentViewController]) {
         if ([self.navigationItem.titleView isFirstResponder]) {
             [PersonsStorage setPersonName:_nameField.text];
         }
@@ -59,6 +69,15 @@
                                   sender:nil];
     }
     [super viewWillDisappear:animated];
+}
+
+
+- (void)willMoveToParentViewController:(UIViewController *)parent
+{
+    if (!parent) {
+        [HelpModel skipNextHelp];
+    }
+    [super willMoveToParentViewController:parent];
 }
 
 

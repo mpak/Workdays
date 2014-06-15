@@ -21,9 +21,6 @@
     // disable swipe left as back action
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"AddPersonCell"];
-
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationWillEnterForeground)
                                                  name:UIApplicationWillEnterForegroundNotification
@@ -92,9 +89,13 @@
         cell.textLabel.text = [PersonsStorage personName];
         cell.detailTextLabel.text = [PersonsStorage personDetails];
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"AddPersonCell"
-                                               forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"AddPersonCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                          reuseIdentifier:@"AddPersonCell"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessibilityLabel = NSLocalizedString(@"ADD_PERSON_ACCESSBILITY_LABEL", @"Add new person cell");
+        }
     }
     return cell;
 }
@@ -169,6 +170,7 @@ canMoveRowAtIndexPath:(NSIndexPath *)indexPath
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
                                                                             action:nil];
+    self.navigationItem.backBarButtonItem.accessibilityLabel = NSLocalizedString(@"BACK_BUTTON", @"Back");
     if ([segue.identifier isEqualToString:@"AddPerson"]) {
         [PersonsStorage selectNewPerson];
     } else if ([segue.identifier isEqualToString:@"ViewPerson"]) {

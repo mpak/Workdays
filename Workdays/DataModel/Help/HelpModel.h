@@ -5,6 +5,7 @@
 
 @interface HelpModel : NSObject
 
++ (void)skipNextHelp;
 + (void)showCalendarHelp;
 
 @end

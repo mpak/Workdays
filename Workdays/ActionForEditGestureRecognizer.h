@@ -13,4 +13,5 @@
          action:(SEL)action;
 
 + (BOOL)emitted:(UIGestureRecognizer *)recognizer;
+
 @end

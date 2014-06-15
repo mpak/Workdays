@@ -13,3 +13,6 @@
 "NAME_PLACEHOLDER" = "Name";
 "WORKDAY_LABEL" = "Workday";
 "RESTDAY_LABEL" = "Restday";
+"CLOSE_BUTTON" = "Close";
+"BACK_BUTTON" = "Back";
+"ADD_PERSON_ACCESSBILITY_LABEL" = "New";

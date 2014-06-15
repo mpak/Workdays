@@ -13,3 +13,6 @@
 "NAME_PLACEHOLDER" = "Имя";
 "WORKDAY_LABEL" = "Рабочий";
 "RESTDAY_LABEL" = "Выходной";
+"CLOSE_BUTTON" = "Закрыть";
+"BACK_BUTTON" = "Назад";
+"ADD_PERSON_ACCESSBILITY_LABEL" = "Строку";

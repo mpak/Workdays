@@ -8,12 +8,25 @@
 
 #import "AppDelegate.h"
 
+#if INTEGRATION_TESTING
+#import <Subliminal/Subliminal.h>
+#import "PersonsStorage.h"
+#endif
+
 
 @implementation AppDelegate
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#if INTEGRATION_TESTING
+    int size = [PersonsStorage size];
+    for (int i = 0; i < size; i++) {
+        [PersonsStorage removePersonAtIndex:0];
+    }
+    [[SLTestController sharedTestController] runTests:[SLTest allTests]
+                                  withCompletionBlock:nil];
+#endif
     return YES;
 }
 
