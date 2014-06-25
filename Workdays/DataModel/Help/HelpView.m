@@ -12,10 +12,6 @@
 static BOOL displayed = NO;
 
 
-@interface HelpView()
-@property (nonatomic, strong) UIButton *closeButton;
-@end
-
 @implementation HelpView
 
 
@@ -33,21 +29,21 @@ static BOOL displayed = NO;
 }
 
 
-- (id)initWithCoder:(NSCoder *)coder
+- (void)awakeFromNib
 {
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        self.closeButton.frame = CGRectMake(20, self.bounds.size.height - 50, 30, 30);
-        self.closeButton.titleLabel.font = [UIFont systemFontOfSize:30];
-        [self.closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.closeButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin| UIViewAutoresizingFlexibleTopMargin;
-        self.closeButton.accessibilityLabel = NSLocalizedString(@"CLOSE_BUTTON", @"Close");
-        [self.closeButton setTitle:@"⊗" forState:UIControlStateNormal];
-        [self.closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.closeButton];
-    }
-    return self;
+    [super awakeFromNib];
+
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    self.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
+
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    closeButton.frame = CGRectMake(20, self.bounds.size.height - 50, 30, 30);
+    closeButton.titleLabel.font = [UIFont systemFontOfSize:30];
+    closeButton.accessibilityLabel = NSLocalizedString(@"CLOSE_BUTTON", @"Close");
+    [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [closeButton setTitle:@"⊗" forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:closeButton];
 }
 
 
