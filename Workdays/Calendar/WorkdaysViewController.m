@@ -35,6 +35,13 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self calendarView] reloadData];
+}
+
+
 - (void)applicationWillEnterForeground
 {
     if ([PersonsStorage shouldRefreshDisplayedData]) {
@@ -82,20 +89,5 @@ shouldSelectCellAtIndex:(NSInteger)index
         [PersonsStorage selectWorkdayForDate:date];
     }
 }
-
-
-- (IBAction)savePeriod:(UIStoryboardSegue *)segue
-{
-    [PersonsStorage saveCurrentWorkday];
-    [[self calendarView] reloadData];
-}
-
-
-- (IBAction)removePeriod:(UIStoryboardSegue *)segue
-{
-    [PersonsStorage removeCurrentWorkday];
-    [[self calendarView] reloadData];
-}
-
 
 @end

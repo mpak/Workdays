@@ -124,22 +124,21 @@
 }
 
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
-                                  sender:(id)sender
+- (IBAction)done
 {
-    if ([identifier isEqualToString:@"SavePeriod"]) {
-        self.workday.workDaysCount = (NSUInteger)[self.workDaysField.text intValue];
-        self.workday.freeDaysCount = (NSUInteger)[self.freeDaysField.text intValue];
-        if (!self.workday.workDaysCount && !self.workday.freeDaysCount) {
-            [[[UIAlertView alloc] initWithTitle:nil
-                                        message:NSLocalizedString(@"EMPTY_DURATION_ERROR", @"Empty duration error message")
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
-            return NO;
-        }
+    self.workday.workDaysCount = (NSUInteger)[self.workDaysField.text intValue];
+    self.workday.freeDaysCount = (NSUInteger)[self.freeDaysField.text intValue];
+    if (!self.workday.workDaysCount && !self.workday.freeDaysCount) {
+        [[[UIAlertView alloc] initWithTitle:nil
+                                    message:NSLocalizedString(@"EMPTY_DURATION_ERROR", @"Empty duration error message")
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+        return;
     }
-    return YES;
+
+    [PersonsStorage saveCurrentWorkday];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -152,7 +151,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        [self performSegueWithIdentifier:@"RemovePeriod" sender:nil];
+        [PersonsStorage removeCurrentWorkday];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
