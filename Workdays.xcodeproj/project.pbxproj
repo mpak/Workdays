@@ -14,6 +14,7 @@
 		1A7283E64E430DC123CC6DAB /* PersonsStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7286697CFDAB0EE1D1A1DE /* PersonsStorage.m */; };
 		1A7284906DE6FEAF462713BD /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728D1BB5E79C958372CE80 /* PersonDetailViewController.m */; };
 		1A72855FC05E9091D7B7FD28 /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728C1CBB164983570DE738 /* PersonsViewController.m */; };
+		1A7285CE8E5B3031054151A9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A728579A2E0ECC2AB61493C /* LaunchScreen.xib */; };
 		1A72866FE7119CCCCAA67ED0 /* HelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7283F172B98A2FE05E1200 /* HelpModel.m */; };
 		1A728830A0707AED96291F5A /* PeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7281069670DD5E51B63A81 /* PeriodViewController.m */; };
 		1A7288A30722CDA191442C67 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A728B56D47AE6D5FF005338 /* Person.m */; };
@@ -96,6 +97,7 @@
 		1A7283FD1059B72B74675E64 /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
 		1A72853E83C77FD6774E7B23 /* ActionForEditGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionForEditGestureRecognizer.m; sourceTree = "<group>"; };
 		1A72857316C9568D60F7A7B7 /* RDVCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVCalendarView.m; sourceTree = "<group>"; };
+		1A728579A2E0ECC2AB61493C /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		1A7285D557FB8965190823C9 /* WorkdaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkdaysViewController.m; sourceTree = "<group>"; };
 		1A728658ABFC914948024FB5 /* Workday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workday.m; sourceTree = "<group>"; };
 		1A72865B30A377C86B9C5904 /* WorkdaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkdaysViewController.h; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				C5D0703F18A53EC800BD5152 /* AppDelegate.h */,
 				C5D0704018A53EC800BD5152 /* AppDelegate.m */,
 				C5D0704218A53EC800BD5152 /* Main.storyboard */,
+				1A728579A2E0ECC2AB61493C /* LaunchScreen.xib */,
 				C5D0704818A53EC800BD5152 /* Images.xcassets */,
 				C5D0703718A53EC800BD5152 /* Supporting Files */,
 				1A728C1DAEB1428C2B842950 /* RDVCalendarView */,
@@ -472,6 +475,7 @@
 				C5D0703B18A53EC800BD5152 /* InfoPlist.strings in Resources */,
 				C5D0704418A53EC800BD5152 /* Main.storyboard in Resources */,
 				C56BD3D9192CF8090026D051 /* CalendarHelp.xib in Resources */,
+				1A7285CE8E5B3031054151A9 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
