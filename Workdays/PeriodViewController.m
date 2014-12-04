@@ -70,6 +70,13 @@
 }
 
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.view endEditing:YES];
+    [super viewWillDisappear:animated];
+}
+
+
 - (void)currentLocaleDidChange:(NSNotification *)notification
 {
     [self setTitle];

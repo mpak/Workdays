@@ -68,6 +68,7 @@
         [self performSegueWithIdentifier:@"SavePerson"
                                   sender:nil];
     }
+    [self.navigationItem.titleView endEditing:YES];
     [super viewWillDisappear:animated];
 }
 
