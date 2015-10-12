@@ -167,3 +167,6 @@ Pods/
 # ...none. Everything is now explained.
 
 .idea/
+
+# GitHub credentials
+Workdays.xcworkspace/xcshareddata/Workdays.xccheckout
