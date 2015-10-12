@@ -117,6 +117,19 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 
+- (NSIndexPath *)              tableView:(UITableView *)tableView
+targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+                     toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    if (proposedDestinationIndexPath.u_row < [PersonsStorage size]) {
+        return proposedDestinationIndexPath;
+    } else {
+        NSInteger newIndex = [PersonsStorage size] ? [PersonsStorage size] - 1 : 0;
+        return [NSIndexPath indexPathForRow:newIndex inSection:proposedDestinationIndexPath.section];
+    }
+}
+
+
 - (void) tableView:(UITableView *)tableView
 moveRowAtIndexPath:(NSIndexPath *)fromIndexPath
        toIndexPath:(NSIndexPath *)toIndexPath
